@@ -1,0 +1,3 @@
+D:\Projeto-Android\PROJETOS\FacekeySemSesameCLIENT-SEM-LOGO
+
+Essa é a versão SEM o SESAME, só poe login e senha e verifica no sesame e entra.
