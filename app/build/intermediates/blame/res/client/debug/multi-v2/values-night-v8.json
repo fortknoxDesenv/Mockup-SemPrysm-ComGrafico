@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Developer\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\app\\build\\intermediates\\incremental\\mergeClientDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "D:\\Projeto-Android\\PROJETOS\\FacekeySemSesameCLIENT-SEM-LOGO\\app\\build\\intermediates\\incremental\\mergeClientDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\dfa17af06254ea2f63fbed428f16b3c3\\res\\values-night-v8\\values-night-v8.xml",
@@ -21,17 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\7a1cc640695b01aef6b4d9600ddbe368\\res\\values-night-v8\\values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,113,170",
-                        "endColumns": "57,56,41",
-                        "endOffsets": "108,165,207"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\8d0cf284b78772c380d9e941f6a1b84b\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\32ec46b36194af90e62f985c443a661c\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -45,6 +35,16 @@
                         "startOffsets": "212",
                         "endColumns": "44",
                         "endOffsets": "252"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\504f8a46d56f75c7110e588e82bb1aee\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,113,170",
+                        "endColumns": "57,56,41",
+                        "endOffsets": "108,165,207"
                     }
                 }
             ]

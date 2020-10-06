@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Developer\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\app\\build\\intermediates\\incremental\\mergeClientDebugResources\\merged.dir\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+            "outputFile": "D:\\Projeto-Android\\PROJETOS\\FacekeySemSesameCLIENT-SEM-LOGO\\app\\build\\intermediates\\incremental\\mergeClientDebugResources\\merged.dir\\values-ldrtl-v17\\values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\7a1cc640695b01aef6b4d9600ddbe368\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\504f8a46d56f75c7110e588e82bb1aee\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

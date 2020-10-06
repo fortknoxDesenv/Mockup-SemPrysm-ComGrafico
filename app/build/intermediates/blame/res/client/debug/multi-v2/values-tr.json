@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Developer\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\app\\build\\intermediates\\incremental\\mergeClientDebugResources\\merged.dir\\values-tr\\values-tr.xml",
+            "outputFile": "D:\\Projeto-Android\\PROJETOS\\FacekeySemSesameCLIENT-SEM-LOGO\\app\\build\\intermediates\\incremental\\mergeClientDebugResources\\merged.dir\\values-tr\\values-tr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\dfa17af06254ea2f63fbed428f16b3c3\\res\\values-tr\\values-tr.xml",
@@ -55,6 +55,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\504f8a46d56f75c7110e588e82bb1aee\\res\\values-tr\\values-tr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,215,286,363,459,547,613,693,751,819,892,960,1031,1079,1147,1208,1290",
+                        "endColumns": "159,70,76,95,87,65,79,57,67,72,67,70,47,67,60,81,55",
+                        "endOffsets": "210,281,358,454,542,608,688,746,814,887,955,1026,1074,1142,1203,1285,1341"
+                    },
+                    "to": {
+                        "startLines": "50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "5812,5972,6043,6120,6216,6304,6370,6450,6508,6576,6649,6717,6788,6836,6904,6965,7047",
+                        "endColumns": "159,70,76,95,87,65,79,57,67,72,67,70,47,67,60,81,55",
+                        "endOffsets": "5967,6038,6115,6211,6299,6365,6445,6503,6571,6644,6712,6783,6831,6899,6960,7042,7098"
+                    }
+                },
+                {
                     "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\e5f8c723ff4eb3c7a13c294c834717d9\\res\\values-tr\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -69,23 +86,6 @@
                         "startOffsets": "2786,2898,3085,3223,3330,3536,3668,3825,4166,4397,4506,4694,4830,5034,5231,5323,5417",
                         "endColumns": "111,186,137,106,205,131,156,134,230,108,187,135,203,196,91,93,108",
                         "endOffsets": "2893,3080,3218,3325,3531,3663,3820,3955,4392,4501,4689,4825,5029,5226,5318,5412,5521"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\7a1cc640695b01aef6b4d9600ddbe368\\res\\values-tr\\values-tr.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,215,286,363,459,547,613,693,751,819,892,960,1031,1079,1147,1208,1290",
-                        "endColumns": "159,70,76,95,87,65,79,57,67,72,67,70,47,67,60,81,55",
-                        "endOffsets": "210,281,358,454,542,608,688,746,814,887,955,1026,1074,1142,1203,1285,1341"
-                    },
-                    "to": {
-                        "startLines": "50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "5812,5972,6043,6120,6216,6304,6370,6450,6508,6576,6649,6717,6788,6836,6904,6965,7047",
-                        "endColumns": "159,70,76,95,87,65,79,57,67,72,67,70,47,67,60,81,55",
-                        "endOffsets": "5967,6038,6115,6211,6299,6365,6445,6503,6571,6644,6712,6783,6831,6899,6960,7042,7098"
                     }
                 },
                 {

@@ -49,4 +49,8 @@ public interface AuthToken {
     @GET("AppVisionService.svc/GetVariableStatesByFilter?filters=$V.App.REGIONAL.POC.*")
     Call<SolicitationExtension> GetSolicitHistApprovedReproved(@Header("SessionID") String SessionID);
 
+    @Headers({"Accept: application/xml"})
+    @GET("AppVisionService.svc/ChangePassword")
+    Call<Void> GetChangedPassword(@Header("SessionID") String SessionId, @Query("username") String username, @Query("oldHashPassword") String oldHashPassword, @Query("newHashPassword") String newHashPassword);
+
 }

@@ -1566,6 +1566,7 @@ id disableHome
 id draw3x3
 id draw4x4
 id drawPhi
+id editSenhaLogin
 id edit_query
 id enableBtBtn
 id enableLocationBtn
@@ -1914,7 +1915,10 @@ id try_again_container
 id tutorialBackBtn
 id tutorialPageDescription
 id tutorialTryAgain
+id txtCadastroSenha
 id txtMenuAprovReprov
+id txtNovaSenha
+id txtRepitaNovaSenha
 id txtSolicitation
 id txtsenha
 id uniform
@@ -2015,6 +2019,7 @@ layout activity_solicitation_history
 layout activity_time
 layout activity_video
 layout alert_dialog
+layout alert_dialog_nova_senha
 layout anv_camera_view
 layout camera_instructions_layout
 layout camera_liveness_view
@@ -2390,6 +2395,7 @@ string default_notification_channel_name
 string default_web_client_id
 string define_easypreferences
 string digite_nome_usuario
+string digite_senha_usuario
 string do_delete
 string do_survey
 string enableBtnRegister

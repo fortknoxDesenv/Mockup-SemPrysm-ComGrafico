@@ -24,4 +24,9 @@ public class Enum {
         URL_ANYVISION,
         URL_SERVIDOR_LOCAL
     }
+
+    public enum LogarSemSesame {
+        LOGAR,
+        MUDARSENHA
+    }
 }

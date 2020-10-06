@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
@@ -24,9 +25,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
+
 import com.anyvision.facekeyexample.R;
+import com.anyvision.facekeyexample.activities.logged.MainActivity;
 import com.anyvision.facekeyexample.activities.logged.SolicitationExtensionActivity;
 import com.anyvision.facekeyexample.firebase.Firebase;
 import com.anyvision.facekeyexample.models.GetVariables;
@@ -35,11 +39,13 @@ import com.anyvision.facekeyexample.prysm.Authentication;
 import com.anyvision.facekeyexample.utils.Enum;
 import com.anyvision.sesame.Sesame;
 import com.google.firebase.messaging.FirebaseMessaging;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class LoginActivity extends BaseActivity {
 
+    private static Context mContext;
     private Settings settings = new Settings();
     private static final int TIMEOUT = 120000;
     private static final String[] PERMISSIONS = new String[]{
@@ -50,17 +56,20 @@ public class LoginActivity extends BaseActivity {
     private Button signUpBtn;
     private Button logInBtn;
     private Button btnPanico;
-    private View progressBar;
+    private static View progressBar;
     private InfoMobile infoMobile;
     private TextView serverLocalUrl;
     private TextView anyvisionUrl;
     private View SettingsComponent;
     private EditText etUsername;
+    private EditText editSenhaLogin;
     private Authentication auth;
     private static Thread LoginActivityThread;
     private static boolean enableBtnRegister;
     private int countClick = 0;
     private long clickDelayTime = 1000;
+    private static AlertDialog alertDialogNovaSenha;
+
     private CountDownTimer mCountDownTimer = new CountDownTimer(clickDelayTime, clickDelayTime) {
         @Override
         public void onTick(long millisUntilFinished) {
@@ -86,10 +95,14 @@ public class LoginActivity extends BaseActivity {
         serverLocalUrl = findViewById(R.id.serverLocalUrl);
         anyvisionUrl = findViewById(R.id.anyvisionUrl);
         etUsername = findViewById(R.id.username);
+        editSenhaLogin = findViewById(R.id.editSenhaLogin);
+
+        mContext = this;
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.alert_dialog, null);
         final EditText input = (EditText) view.findViewById(R.id.txtsenha);
+
         alertDialogBuilder.setView(view);
 
         alertDialogBuilder.setPositiveButton("ENTER", new DialogInterface.OnClickListener() {
@@ -109,6 +122,41 @@ public class LoginActivity extends BaseActivity {
         });
 
         final AlertDialog alertDialog = alertDialogBuilder.create();
+
+        //NOVA SENHA
+        AlertDialog.Builder alertDialogBuildNovaSenha = new AlertDialog.Builder(this);
+        View view2 = getLayoutInflater().inflate(R.layout.alert_dialog_nova_senha, null);
+        final EditText txtNovaSenha = (EditText) view2.findViewById(R.id.txtNovaSenha);
+        final EditText txtRepitaNovaSenha = (EditText) view2.findViewById(R.id.txtRepitaNovaSenha);
+
+        alertDialogBuildNovaSenha.setView(view2);
+
+        alertDialogBuildNovaSenha.setPositiveButton("CADASTRAR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String usuario = etUsername.getText().toString();
+                String novaSenha = txtNovaSenha.getText().toString();
+                String repitaNovaSenha = txtRepitaNovaSenha.getText().toString();
+
+                if(novaSenha.equals(repitaNovaSenha)){
+                  auth.GetLogarSemSesame(usuario, novaSenha, Enum.LogarSemSesame.MUDARSENHA.toString());
+                }
+                else{
+                    Toast.makeText(LoginActivity.this, "Senhas não conferem", Toast.LENGTH_LONG).show();
+                    txtNovaSenha.getText().clear();
+                    txtRepitaNovaSenha.getText().clear();
+                    //alertDialogNovaSenha.show();
+                }
+            }
+        });
+
+        alertDialogBuildNovaSenha.setNegativeButton("SAIR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+
+          alertDialogNovaSenha = alertDialogBuildNovaSenha.create();
 
         SharedPreferences sharedEnableBtn = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         if (sharedEnableBtn.getBoolean(getString(R.string.enableBtnRegister), false)) {
@@ -212,26 +260,31 @@ public class LoginActivity extends BaseActivity {
                 auth.verifyServerStatus();
                 try {
                     if (auth.getStatusServer()) {
-                        if (etUsername.getText().toString().matches("")) {
+                        if (etUsername.getText().toString().matches(""))
                             Toast.makeText(LoginActivity.this, getString(R.string.digite_nome_usuario), Toast.LENGTH_LONG).show();
-                        } else {
+                        else if (editSenhaLogin.getText().toString().matches(""))
+                            Toast.makeText(LoginActivity.this, getString(R.string.digite_senha_usuario), Toast.LENGTH_LONG).show();
+                        else {
+                            GetVariables.getInstance().setSenhaUsuarioLogin(editSenhaLogin.getText().toString());
                             GetVariables.getInstance().setEtUsername(etUsername.getText().toString());
                             progressBar.setVisibility(View.VISIBLE);
-                            Sesame.initialize(anyvisionUrl.getText().toString(), 60000);
+                            //Sesame.initialize(anyvisionUrl.getText().toString(), 60000);
                             String typeAccount = GetVariables.getInstance().getSpTypeAccount();
 
-                            if (typeAccount.equals(Enum.AgReg.REGIONAL.toString())) {
+                            if (typeAccount.equals(Enum.AgReg.REGIONAL.toString()))
                                 auth.requestToken(getString(R.string.aprovaReprovaExtesao), getString(R.string.geral));
-                            }
 
                             if (typeAccount.equals(Enum.AgReg.AGENCIA.toString())) {
                                 auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.request.descriptions.toString());
                             }
 
-                            LoginCameraActivity.startActivity(LoginActivity.this);
+                            auth.GetLogarSemSesame(etUsername.getText().toString(), editSenhaLogin.getText().toString(), "LOGAR");
+
+                            //MainActivity.startActivity(LoginActivity.this);
+
+                            //LoginCameraActivity.startActivity(LoginActivity.this);
                         }
-                    }
-                    else {
+                    } else {
                         Toast.makeText(LoginActivity.this, getString(R.string.verifique_status_servidor), Toast.LENGTH_LONG).show();
                     }
 
@@ -304,6 +357,18 @@ public class LoginActivity extends BaseActivity {
         progressBar.setVisibility(View.GONE);
         signUpBtn.setEnabled(true);
     }
+
+    public static void removeProgressBarSemSesame() {
+        progressBar.setVisibility(View.GONE);
+
+    }
+
+    public static void goToMainActivity() {
+        progressBar.setVisibility(View.GONE);
+        Intent login = new Intent(mContext, MainActivity.class);
+        mContext.startActivity(login);
+    }
+
 
     private void showBrightnessPermissionDialog() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -392,8 +457,7 @@ public class LoginActivity extends BaseActivity {
             if (urlAnyvision != null) {
                 GetVariables.getInstance().setEtAnyvisionUrl(urlAnyvision);
                 anyvisionUrl.setText(urlAnyvision);
-            }
-            else {
+            } else {
                 GetVariables.getInstance().setEtAnyvisionUrl(anyvisionUrl.getText().toString());
             }
         } catch (Exception e) {
@@ -433,5 +497,10 @@ public class LoginActivity extends BaseActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static  void AlterarSenhaLogin(){
+        progressBar.setVisibility(View.GONE);
+        alertDialogNovaSenha.show();
     }
 }

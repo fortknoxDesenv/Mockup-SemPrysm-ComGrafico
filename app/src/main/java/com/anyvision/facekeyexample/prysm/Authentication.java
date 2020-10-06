@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import android.telephony.SignalStrength;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ import com.android.volley.error.VolleyError;
 import com.android.volley.request.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.anyvision.facekeyexample.FacekeyApplication;
+import com.anyvision.facekeyexample.activities.LoginActivity;
+import com.anyvision.facekeyexample.activities.logged.MainActivity;
 import com.anyvision.facekeyexample.activities.logged.SolicitationExtensionActivity;
 import com.anyvision.facekeyexample.activities.logged.SolicitationHistoryApproved;
 import com.anyvision.facekeyexample.activities.logged.SolicitationHistoryReproved;
@@ -27,6 +30,7 @@ import com.anyvision.facekeyexample.models.MessageTopic;
 import com.anyvision.facekeyexample.models.SolicitationExtension;
 import com.anyvision.facekeyexample.models.VariableRow;
 import com.anyvision.facekeyexample.models.VariableRowChamado;
+import com.anyvision.facekeyexample.utils.Enum;
 
 import org.json.JSONObject;
 
@@ -68,8 +72,10 @@ public class Authentication extends Application {
     }
 
     public void requestToken(final String name, final String newValue) {
-
         final String AccountType = GetVariables.getInstance().getSpTypeAccount();
+        final String usuarioLogin = GetVariables.getInstance().getEtUsername();
+        final String senhaUsuarioLogin = GetVariables.getInstance().getSenhaUsuarioLogin();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(serverLocalUrl)
                 .addConverterFactory(ScalarsConverterFactory.create())
@@ -86,7 +92,14 @@ public class Authentication extends Application {
             public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
                 try {
                     token = cleanOUTPUT(response.body().string());
-                    hashpassword = md5(token + md5(AccountType + AccountType));
+
+                    if(usuarioLogin != null && senhaUsuarioLogin != null){
+                        hashpassword = md5(token + md5(usuarioLogin + senhaUsuarioLogin));
+                    }
+                    else {
+                        hashpassword = md5(token + md5(AccountType + AccountType));
+                    }
+
                     if (response.isSuccessful()) {
 
                         if (getContext() == null) {
@@ -135,6 +148,8 @@ public class Authentication extends Application {
     private void getAuthentication(final String SessionId, String pass, final String name, final String newValue) {
 
         final String AccountType = GetVariables.getInstance().getSpTypeAccount();
+        final String usuarioLogin = GetVariables.getInstance().getEtUsername();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(serverLocalUrl)
                 .addConverterFactory(ScalarsConverterFactory.create())
@@ -142,7 +157,9 @@ public class Authentication extends Application {
         AuthToken tokenAuth = retrofit.create(AuthToken.class);
 
         Log.d("auth", pass);
-        Call<Void> call = tokenAuth.signIn(SessionId, AccountType, pass);
+//        Call<Void> call = tokenAuth.signIn(SessionId, AccountType, pass);
+
+        Call<Void> call = tokenAuth.signIn(SessionId, usuarioLogin, pass);
 
         call.enqueue(new Callback<Void>() {
             @Override
@@ -152,7 +169,8 @@ public class Authentication extends Application {
                     Log.d("auth", String.valueOf(response.code()));
                     Log.d("auth", response.toString());
 
-                    setVariable(SessionId, name, newValue);
+                        setVariable(SessionId, name, newValue);
+
                 } else {
                     Log.d("ErroConexao", "FECHOU E ABRIU DENOVO in getAuthentication");
                     Log.d("ErroConexao", String.valueOf(response.code()));
@@ -183,7 +201,7 @@ public class Authentication extends Application {
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                Log.d("chamado", "acho q setou agora a variavel");
+                Log.d("setVar", response.toString());
 
                 showToast(response.code());
                 if (response.isSuccessful()) {
@@ -622,6 +640,15 @@ public class Authentication extends Application {
             case 200:
                 Toast.makeText(getContext(), "Mensagem enviada com sucesso!", Toast.LENGTH_LONG).show();
                 break;
+            case 201:
+                Toast.makeText(getContext(), "Senha Alterada com Sucesso!", Toast.LENGTH_LONG).show();
+                break;
+            case 202:
+                Toast.makeText(getContext(), "Falha na alteração de senha, Por favor tente novamente!", Toast.LENGTH_LONG).show();
+               break;
+            case 401:
+                Toast.makeText(getContext(), "Senha ou usuário não confere, Por favor tente novamente!", Toast.LENGTH_LONG).show();
+                break;
             case 402:
                 Toast.makeText(getContext(), "Sistema ocupado, tente novamente em alguns minutos.", Toast.LENGTH_LONG).show();
                 break;
@@ -693,6 +720,185 @@ public class Authentication extends Application {
 
             }
         });
+    }
+
+    public void GetLogarSemSesame(final String usuario, final String senha, final String comando) {
+        final String accountType = GetVariables.getInstance().getSpTypeAccount();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(serverLocalUrl)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .build();
+
+        final AuthToken tokenAuth = retrofit.create(AuthToken.class);
+        Call<ResponseBody> call = tokenAuth.getToken();
+
+        call.enqueue(new Callback<ResponseBody>() {
+            private String token;
+            private String hashpassword;
+
+            @Override
+            public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
+                try {
+                    token = cleanOUTPUT(response.body().string());
+                    hashpassword = md5(token + md5(usuario + senha));
+                    if (response.isSuccessful()) {
+
+                        if (getContext() == null) {
+                            mContext = FacekeyApplication.getAppContext();
+                        }
+
+                        if(comando.equals(Enum.LogarSemSesame.LOGAR.toString()))
+                        GetAutenticarSemSesame(token, hashpassword, usuario);
+
+                        if(comando.equals(Enum.LogarSemSesame.MUDARSENHA.toString()))
+                        GetChangedPassword(token, usuario, hashpassword, senha);
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.d("ErroConexao", t.getMessage());
+            }
+        });
+    }
+
+    private void GetAutenticarSemSesame(final String SessionId, String pass, String usuarioLogin) {
+
+        final String accountType = GetVariables.getInstance().getSpTypeAccount();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(serverLocalUrl)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .build();
+        AuthToken tokenAuth = retrofit.create(AuthToken.class);
+
+        Call<Void> call = tokenAuth.signIn(SessionId, usuarioLogin, pass);
+
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Log.d("GetAuthSEM-SESAME", response.toString());
+
+                if (response.isSuccessful()) {
+                    if (accountType.equals("AGENCIA")){
+                         GetVarDescriptBtnMainActivitySemSesame(SessionId);
+                    }
+                    else {
+                        GetVariableSolicitationExtensionGeral(SessionId);
+                    }
+                } else
+                    {
+                    if (response.code() == 402)
+                        showToast(response.code());
+
+                    //Senha resetada, inserir nova senha
+                    if(response.code() == 406)
+                        LoginActivity.AlterarSenhaLogin();
+
+                    //Senha ou usuario incorreto
+                    if(response.code() == 401)
+                        showToast(401);
+
+                    LoginActivity.removeProgressBarSemSesame();
+                    closeSession(SessionId);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.d("ErroConexao", t.getMessage());
+            }
+        });
+    }
+
+    public void GetVarDescriptBtnMainActivitySemSesame(final String SessionID) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(serverLocalUrl)
+                .addConverterFactory(SimpleXmlConverterFactory.create())
+                .build();
+        AuthToken tokenAuth = retrofit.create(AuthToken.class);
+
+        Call<VariableRow> call = tokenAuth.GetVariableRow(SessionID);
+
+        call.enqueue(new Callback<VariableRow>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onResponse(Call<VariableRow> call, Response<VariableRow> response) {
+
+                if (response.isSuccessful()) {
+                    VariableRow desc = response.body();
+
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.clear().commit();
+
+                    ArrayList<String> listaDescriptions = desc.getListaDescription();
+
+                    editor.putInt("descriptions_size", listaDescriptions.size());
+                    for (int i = 0; i < desc.getListaDescription().size(); i++) {
+                        editor.putString("descriptions" + "_" + i, listaDescriptions.get(i));
+                    }
+                    editor.apply();
+
+                    Log.d("auth", response.toString());
+                    Log.d("auth", response.message());
+                    assert response.body() != null;
+                    Log.d("auth", response.body().toString());
+                    closeSession(SessionID);
+
+                    LoginActivity.goToMainActivity();
+
+                } else {
+                    assert response.errorBody() != null;
+                    Log.d("auth", response.errorBody().toString());
+                    closeSession(SessionID);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<VariableRow> call, Throwable t) {
+                Log.d("auth", t.getMessage());
+            }
+        });
+    }
+
+    private void GetChangedPassword(final String token, final String username, final String oldHasPassword, final String novaSenha){
+
+        final String newHashPassword = md5(username + novaSenha);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(serverLocalUrl)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .build();
+        AuthToken tokenAuth = retrofit.create(AuthToken.class);
+
+        Call<Void> call = tokenAuth.GetChangedPassword(token, username, oldHasPassword, newHashPassword);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Log.d("erro", response.toString());
+                if(response.isSuccessful()){
+                    //Toast.makeText(getContext(), "Senha Alterada com Sucesso!", Toast.LENGTH_LONG);
+                    showToast(201);
+                }
+                else{
+                    //Toast.makeText(getContext(), "Falha na alteração de senha, Por favor tente novamente!", Toast.LENGTH_LONG);
+                    showToast(202);
+                    LoginActivity.AlterarSenhaLogin();
+                }
+            }
+
+        @Override
+        public void onFailure(Call<Void> call, Throwable t) {
+            Log.d("auth", t.getMessage());
+        }
+    });
     }
 
     public static Context getContext() {

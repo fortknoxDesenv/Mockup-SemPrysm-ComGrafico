@@ -161,58 +161,58 @@ public final class R {
         public static final int draw3x3 = 0x7f0900cb;
         public static final int draw4x4 = 0x7f0900cc;
         public static final int drawPhi = 0x7f0900cd;
-        public static final int end = 0x7f0900d2;
-        public static final int exposureCorrection = 0x7f0900dd;
-        public static final int filterControl1 = 0x7f0900e9;
-        public static final int filterControl2 = 0x7f0900ea;
-        public static final int fluorescent = 0x7f0900fa;
-        public static final int focusMarkerContainer = 0x7f0900fb;
-        public static final int focusMarkerFill = 0x7f0900fc;
-        public static final int forever = 0x7f0900fd;
-        public static final int front = 0x7f090102;
-        public static final int glSurface = 0x7f090106;
-        public static final int gl_surface_view = 0x7f090107;
-        public static final int h263 = 0x7f09010b;
-        public static final int h264 = 0x7f09010c;
-        public static final int icon = 0x7f090111;
-        public static final int icon_group = 0x7f090112;
-        public static final int incandescent = 0x7f09011c;
-        public static final int info = 0x7f09011e;
-        public static final int italic = 0x7f090124;
-        public static final int left = 0x7f090128;
-        public static final int line1 = 0x7f09012d;
-        public static final int line3 = 0x7f09012e;
-        public static final int mono = 0x7f090157;
-        public static final int none = 0x7f090160;
-        public static final int normal = 0x7f090161;
-        public static final int notification_background = 0x7f090162;
-        public static final int notification_main_column = 0x7f090163;
-        public static final int notification_main_column_container = 0x7f090164;
-        public static final int off = 0x7f090165;
-        public static final int on = 0x7f090166;
-        public static final int picture = 0x7f09017b;
-        public static final int right = 0x7f090198;
-        public static final int right_icon = 0x7f09019a;
-        public static final int right_side = 0x7f09019b;
-        public static final int start = 0x7f0901e2;
-        public static final int stereo = 0x7f0901e7;
-        public static final int surface = 0x7f0901eb;
-        public static final int surface_view = 0x7f0901ec;
-        public static final int surface_view_root = 0x7f0901ed;
-        public static final int tag_transition_group = 0x7f0901f7;
-        public static final int tag_unhandled_key_event_manager = 0x7f0901f8;
-        public static final int tag_unhandled_key_listeners = 0x7f0901f9;
-        public static final int takePicture = 0x7f0901fb;
-        public static final int text = 0x7f0901fd;
-        public static final int text2 = 0x7f0901fe;
-        public static final int texture = 0x7f09020b;
-        public static final int texture_view = 0x7f09020c;
-        public static final int time = 0x7f09020f;
-        public static final int title = 0x7f090211;
-        public static final int top = 0x7f090215;
-        public static final int torch = 0x7f090218;
-        public static final int video = 0x7f090238;
-        public static final int zoom = 0x7f090246;
+        public static final int end = 0x7f0900d3;
+        public static final int exposureCorrection = 0x7f0900de;
+        public static final int filterControl1 = 0x7f0900ea;
+        public static final int filterControl2 = 0x7f0900eb;
+        public static final int fluorescent = 0x7f0900fb;
+        public static final int focusMarkerContainer = 0x7f0900fc;
+        public static final int focusMarkerFill = 0x7f0900fd;
+        public static final int forever = 0x7f0900fe;
+        public static final int front = 0x7f090103;
+        public static final int glSurface = 0x7f090107;
+        public static final int gl_surface_view = 0x7f090108;
+        public static final int h263 = 0x7f09010c;
+        public static final int h264 = 0x7f09010d;
+        public static final int icon = 0x7f090112;
+        public static final int icon_group = 0x7f090113;
+        public static final int incandescent = 0x7f09011d;
+        public static final int info = 0x7f09011f;
+        public static final int italic = 0x7f090125;
+        public static final int left = 0x7f090129;
+        public static final int line1 = 0x7f09012e;
+        public static final int line3 = 0x7f09012f;
+        public static final int mono = 0x7f090158;
+        public static final int none = 0x7f090161;
+        public static final int normal = 0x7f090162;
+        public static final int notification_background = 0x7f090163;
+        public static final int notification_main_column = 0x7f090164;
+        public static final int notification_main_column_container = 0x7f090165;
+        public static final int off = 0x7f090166;
+        public static final int on = 0x7f090167;
+        public static final int picture = 0x7f09017c;
+        public static final int right = 0x7f090199;
+        public static final int right_icon = 0x7f09019b;
+        public static final int right_side = 0x7f09019c;
+        public static final int start = 0x7f0901e3;
+        public static final int stereo = 0x7f0901e8;
+        public static final int surface = 0x7f0901ec;
+        public static final int surface_view = 0x7f0901ed;
+        public static final int surface_view_root = 0x7f0901ee;
+        public static final int tag_transition_group = 0x7f0901f8;
+        public static final int tag_unhandled_key_event_manager = 0x7f0901f9;
+        public static final int tag_unhandled_key_listeners = 0x7f0901fa;
+        public static final int takePicture = 0x7f0901fc;
+        public static final int text = 0x7f0901fe;
+        public static final int text2 = 0x7f0901ff;
+        public static final int texture = 0x7f09020c;
+        public static final int texture_view = 0x7f09020d;
+        public static final int time = 0x7f090210;
+        public static final int title = 0x7f090212;
+        public static final int top = 0x7f090216;
+        public static final int torch = 0x7f090219;
+        public static final int video = 0x7f09023c;
+        public static final int zoom = 0x7f09024a;
     }
     public static final class integer {
         private integer() {}
@@ -223,16 +223,16 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int cameraview_gl_view = 0x7f0c0030;
-        public static final int cameraview_layout_focus_marker = 0x7f0c0031;
-        public static final int cameraview_surface_view = 0x7f0c0032;
-        public static final int cameraview_texture_view = 0x7f0c0033;
-        public static final int notification_action = 0x7f0c0050;
-        public static final int notification_action_tombstone = 0x7f0c0051;
-        public static final int notification_template_custom_big = 0x7f0c0058;
-        public static final int notification_template_icon_group = 0x7f0c0059;
-        public static final int notification_template_part_chronometer = 0x7f0c005d;
-        public static final int notification_template_part_time = 0x7f0c005e;
+        public static final int cameraview_gl_view = 0x7f0c0031;
+        public static final int cameraview_layout_focus_marker = 0x7f0c0032;
+        public static final int cameraview_surface_view = 0x7f0c0033;
+        public static final int cameraview_texture_view = 0x7f0c0034;
+        public static final int notification_action = 0x7f0c0051;
+        public static final int notification_action_tombstone = 0x7f0c0052;
+        public static final int notification_template_custom_big = 0x7f0c0059;
+        public static final int notification_template_icon_group = 0x7f0c005a;
+        public static final int notification_template_part_chronometer = 0x7f0c005e;
+        public static final int notification_template_part_time = 0x7f0c005f;
     }
     public static final class string {
         private string() {}
@@ -261,7 +261,7 @@ public final class R {
         public static final int cameraview_filter_tint = 0x7f0f00ad;
         public static final int cameraview_filter_vignette = 0x7f0f00ae;
         public static final int common_google_play_services_unknown_issue = 0x7f0f0106;
-        public static final int status_bar_notification_info_overflow = 0x7f0f02da;
+        public static final int status_bar_notification_info_overflow = 0x7f0f02db;
     }
     public static final class style {
         private style() {}

@@ -74,6 +74,7 @@
     <string name="AGENCIA">AGENCIA</string>
     <string name="AGENCIA0001.5">App.AGENCIA.POC.AGENCIA0001.5</string>
     <string name="digite_nome_usuario">Por favor, digite o nome de usuário definido no registro!</string>
+    <string name="digite_senha_usuario">Por favor, digite a senha de usuário definido no registro!</string>
     <string name="aprovaReprovaExtesao">aprovaReprovaExtesao</string>
     <string name="geral">geral</string>
     <string name="verifique_status_servidor">Por favor, verifique o status do servidor local!</string>

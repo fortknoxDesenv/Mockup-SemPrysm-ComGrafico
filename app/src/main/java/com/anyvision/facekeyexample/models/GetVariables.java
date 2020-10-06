@@ -19,6 +19,8 @@ public class GetVariables {
     private static String etRegisterName;
     private static String etRegisterCargo;
     private static String etRegisterLocalAgencia;
+    private static  String usuarioLogin;
+    private static String senhaUsuarioLogin;
 
     private GetVariables(){
         localServerUrl = "";
@@ -91,6 +93,22 @@ public class GetVariables {
 
     public String getSpTypeAccount() {
         return spTypeAccount;
+    }
+
+    public String getUsuarioLogin() {
+        return usuarioLogin;
+    }
+
+    public void setUsuarioLoginActivity(String EditUsuarioLogin){
+        GetVariables.usuarioLogin = usuarioLogin;
+    }
+
+    public String getSenhaUsuarioLogin(){
+        return senhaUsuarioLogin;
+    }
+
+    public void setSenhaUsuarioLogin(String EditsenhaUsuarioLogin){
+        GetVariables.senhaUsuarioLogin = EditsenhaUsuarioLogin;
     }
 
     public void setSpTypeAccount(String spTypeAccount) {

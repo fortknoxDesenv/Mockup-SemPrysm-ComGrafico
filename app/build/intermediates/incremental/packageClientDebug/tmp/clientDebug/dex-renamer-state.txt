@@ -1,10 +1,10 @@
-#Tue Sep 29 17:12:33 BRT 2020
+#Tue Oct 06 18:31:10 BRT 2020
 path.2=classes2.dex
 path.1=classes.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=D\:\\Developer\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\app\\build\\intermediates\\dex\\clientDebug\\mergeExtDexClientDebug\\out
-base.1=D\:\\Developer\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\app\\build\\intermediates\\dex\\clientDebug\\mergeProjectDexClientDebug\\out
-base.0=D\:\\Developer\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\NEW-SESAME-ATUALIZACAO-CLIENT-SEM-LOGO\\app\\build\\intermediates\\dex\\clientDebug\\mergeExtDexClientDebug\\out
+base.2=D\:\\Projeto-Android\\PROJETOS\\FacekeySemSesameCLIENT-SEM-LOGO\\app\\build\\intermediates\\dex\\clientDebug\\mergeExtDexClientDebug\\out
+base.1=D\:\\Projeto-Android\\PROJETOS\\FacekeySemSesameCLIENT-SEM-LOGO\\app\\build\\intermediates\\dex\\clientDebug\\mergeProjectDexClientDebug\\out
+base.0=D\:\\Projeto-Android\\PROJETOS\\FacekeySemSesameCLIENT-SEM-LOGO\\app\\build\\intermediates\\dex\\clientDebug\\mergeExtDexClientDebug\\out
