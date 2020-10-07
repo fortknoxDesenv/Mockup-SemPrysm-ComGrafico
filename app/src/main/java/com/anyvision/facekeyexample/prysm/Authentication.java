@@ -25,6 +25,7 @@ import com.anyvision.facekeyexample.activities.logged.MainActivity;
 import com.anyvision.facekeyexample.activities.logged.SolicitationExtensionActivity;
 import com.anyvision.facekeyexample.activities.logged.SolicitationHistoryApproved;
 import com.anyvision.facekeyexample.activities.logged.SolicitationHistoryReproved;
+import com.anyvision.facekeyexample.models.ChamadoGrafico;
 import com.anyvision.facekeyexample.models.GetVariables;
 import com.anyvision.facekeyexample.models.MessageTopic;
 import com.anyvision.facekeyexample.models.SolicitationExtension;
@@ -543,7 +544,7 @@ public class Authentication extends Application {
                     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
                     SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                    closeSession(SessionID);
+                    //closeSession(SessionID);
 
                     ArrayList<String> listaDescriptions = desc.getListChamado();
 
@@ -555,7 +556,10 @@ public class Authentication extends Application {
 
                     editor.apply();
 
-                    closeSession(SessionID);
+                    //teste
+                    GetChamadoControleSalaGrafico(SessionID);
+
+                    //closeSession(SessionID);
 
                 } else {
                     assert response.errorBody() != null;
@@ -900,6 +904,57 @@ public class Authentication extends Application {
         }
     });
     }
+
+    public void GetChamadoControleSalaGrafico(final String SessionID) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(serverLocalUrl)
+                .addConverterFactory(SimpleXmlConverterFactory.create())
+                .build();
+        AuthToken tokenAuth = retrofit.create(AuthToken.class);
+
+        Call<ChamadoGrafico> call = tokenAuth.GetGestaoControleSalas(SessionID);
+
+        call.enqueue(new Callback<ChamadoGrafico>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onResponse(Call<ChamadoGrafico> call, Response<ChamadoGrafico> response) {
+
+                if (response.isSuccessful()) {
+
+                    ChamadoGrafico liGestaoCtrSala = response.body();
+
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                    closeSession(SessionID);
+
+                    ArrayList<String> listaDescriptions = liGestaoCtrSala.GetListaGestaoControleSala();
+                    int valorTotal = liGestaoCtrSala.GetPorcentagemTotalGestaoControleSala();
+
+                    editor.putInt("chamado_gestao_valor_total", valorTotal);
+                    editor.putInt("chamado_gestao_controle_sala_size", listaDescriptions.size());
+                    for (int i = 0; i < liGestaoCtrSala.GetListaGestaoControleSala().size(); i++) {
+                        editor.putString("chamado_gestao_controle_sala" + "_" + i, listaDescriptions.get(i).replace("Gestao.Controle_salas.",""));
+                    }
+
+                    editor.apply();
+
+                    closeSession(SessionID);
+
+                } else {
+                    assert response.errorBody() != null;
+                    closeSession(SessionID);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ChamadoGrafico> call1, Throwable t) {
+                Log.d("auth", t.getMessage());
+            }
+        });
+    }
+
 
     public static Context getContext() {
         return mContext;

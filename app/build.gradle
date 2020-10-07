@@ -9,27 +9,17 @@ android {
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 7
-        versionName "1.6"
+        versionName "2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     flavorDimensions"default"
     productFlavors {
-//        poc {
-//            dimension"default"
-//            applicationIdSuffix ".poc"
-//            resValue "string", "app_name", "Sicredi Sesame"
-//        }
-        client {
+        fklight{
             dimension"default"
-            applicationIdSuffix ".client"
-            resValue "string", "app_name", "Facekey Client"
+            applicationIdSuffix ".fklight"
+            resValue "string", "app_name", "FK Light"
         }
-//        sicredi {
-//            dimension"default"
-//            applicationIdSuffix ".sicredi"
-//            resValue "string", "app_name", "Facekey Sicredi"
-//        }
     }
 
     buildTypes {
@@ -108,6 +98,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-vision-common:19.1.0'
     implementation 'com.google.android.gms:play-services-vision-image-label:18.0.4'
     implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 
 }
 apply plugin: 'com.google.gms.google-services'

@@ -4,6 +4,8 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Path;
 import org.simpleframework.xml.Root;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 @Root(strict = false)
 public class VariableRowChamado {
@@ -32,6 +34,10 @@ public class VariableRowChamado {
     @Path("VariableRow[6]")
     private String descriptionChamado6;
 
+    @Element(name = "Description", required = false)
+    @Path("VariableRow[7]")
+    private String descriptionChamado7;
+
     public ArrayList<String> getListChamado() {
         ArrayList<String> listChamado = new ArrayList<String>();
         if (descriptionChamado1 != null) listChamado.add(descriptionChamado1);
@@ -40,7 +46,10 @@ public class VariableRowChamado {
         if (descriptionChamado4 != null) listChamado.add(descriptionChamado4);
         if (descriptionChamado5 != null) listChamado.add(descriptionChamado5);
         if (descriptionChamado6 != null) listChamado.add(descriptionChamado6);
+        if (descriptionChamado7 != null) listChamado.add(descriptionChamado7);
 
         return listChamado;
     }
+
+
 }

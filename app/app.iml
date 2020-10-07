@@ -10,82 +10,82 @@
     </facet>
     <facet type="android" name="Android">
       <configuration>
-        <option name="SELECTED_BUILD_VARIANT" value="clientDebug" />
-        <option name="ASSEMBLE_TASK_NAME" value="assembleClientDebug" />
-        <option name="COMPILE_JAVA_TASK_NAME" value="compileClientDebugSources" />
+        <option name="SELECTED_BUILD_VARIANT" value="fklightDebug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleFklightDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileFklightDebugSources" />
         <afterSyncTasks>
-          <task>generateClientDebugSources</task>
+          <task>generateFklightDebugSources</task>
         </afterSyncTasks>
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/src/client/res;file://$MODULE_DIR$/src/debug/res;file://$MODULE_DIR$/src/clientDebug/res;file://$MODULE_DIR$/build/generated/res/google-services/client/debug;file://$MODULE_DIR$/build/generated/res/rs/client/debug;file://$MODULE_DIR$/build/generated/res/resValues/client/debug" />
-        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/androidTest/res;file://$MODULE_DIR$/src/test/res;file://$MODULE_DIR$/src/androidTestClient/res;file://$MODULE_DIR$/src/testClient/res;file://$MODULE_DIR$/src/androidTestDebug/res;file://$MODULE_DIR$/src/testDebug/res;file://$MODULE_DIR$/build/generated/res/rs/androidTest/client/debug;file://$MODULE_DIR$/build/generated/res/resValues/androidTest/client/debug" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/src/fklight/res;file://$MODULE_DIR$/src/debug/res;file://$MODULE_DIR$/src/fklightDebug/res;file://$MODULE_DIR$/build/generated/res/google-services/fklight/debug;file://$MODULE_DIR$/build/generated/res/rs/fklight/debug;file://$MODULE_DIR$/build/generated/res/resValues/fklight/debug" />
+        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/androidTest/res;file://$MODULE_DIR$/src/test/res;file://$MODULE_DIR$/src/androidTestFklight/res;file://$MODULE_DIR$/src/testFklight/res;file://$MODULE_DIR$/src/androidTestDebug/res;file://$MODULE_DIR$/src/testDebug/res;file://$MODULE_DIR$/build/generated/res/rs/androidTest/fklight/debug;file://$MODULE_DIR$/build/generated/res/resValues/androidTest/fklight/debug" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
-    <output url="file://$MODULE_DIR$/build/intermediates/javac/clientDebug/compileClientDebugJavaWithJavac/classes" />
-    <output-test url="file://$MODULE_DIR$/build/intermediates/javac/clientDebugUnitTest/compileClientDebugUnitTestJavaWithJavac/classes" />
+    <output url="file://$MODULE_DIR$/build/intermediates/javac/fklightDebug/compileFklightDebugJavaWithJavac/classes" />
+    <output-test url="file://$MODULE_DIR$/build/intermediates/javac/fklightDebugUnitTest/compileFklightDebugUnitTestJavaWithJavac/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/client/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/aidl_source_output_dir/clientDebug/compileClientDebugAidl/out" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/client/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/renderscript_source_output_dir/clientDebug/compileClientDebugRenderscript/out" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/google-services/client/debug" type="java-resource" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/client/debug" type="java-resource" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/client/debug" type="java-resource" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/clientDebug/res" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/clientDebug/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/clientDebug/assets" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/clientDebug/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/clientDebug/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/clientDebug/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/clientDebug/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/client/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/aidl_source_output_dir/clientDebugAndroidTest/compileClientDebugAndroidTestAidl/out" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/client/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/renderscript_source_output_dir/clientDebugAndroidTest/compileClientDebugAndroidTestRenderscript/out" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/client/debug" type="java-test-resource" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/client/debug" type="java-test-resource" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClientDebug/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClientDebug/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClientDebug/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClientDebug/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClientDebug/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClientDebug/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClientDebug/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/test/client/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClientDebug/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClientDebug/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClientDebug/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClientDebug/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClientDebug/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClientDebug/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClientDebug/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/client/res" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/client/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/client/assets" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/client/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/client/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/client/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/client/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClient/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClient/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClient/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClient/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClient/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClient/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestClient/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClient/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClient/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClient/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClient/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClient/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClient/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testClient/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/fklight/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/aidl_source_output_dir/fklightDebug/compileFklightDebugAidl/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/fklight/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/renderscript_source_output_dir/fklightDebug/compileFklightDebugRenderscript/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/google-services/fklight/debug" type="java-resource" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/fklight/debug" type="java-resource" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/fklight/debug" type="java-resource" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklightDebug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklightDebug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklightDebug/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklightDebug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklightDebug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklightDebug/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklightDebug/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/fklight/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/aidl_source_output_dir/fklightDebugAndroidTest/compileFklightDebugAndroidTestAidl/out" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/fklight/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/renderscript_source_output_dir/fklightDebugAndroidTest/compileFklightDebugAndroidTestRenderscript/out" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/fklight/debug" type="java-test-resource" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/fklight/debug" type="java-test-resource" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklightDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklightDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklightDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklightDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklightDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklightDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklightDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/test/fklight/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklightDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklightDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklightDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklightDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklightDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklightDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklightDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklight/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklight/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklight/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklight/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklight/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklight/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/fklight/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklight/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklight/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklight/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklight/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklight/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklight/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestFklight/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklight/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklight/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklight/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklight/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklight/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklight/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testFklight/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/assets" type="java-resource" />
@@ -158,6 +158,7 @@
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.protobuf:protobuf-javalite:3.11.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:listenablefuture:1.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.PhilJay:MPAndroidChart:v3.0.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.material:material:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: uk.co.chrisjenx:calligraphy:2.3.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.appcompat:appcompat:1.0.0@aar" level="project" />

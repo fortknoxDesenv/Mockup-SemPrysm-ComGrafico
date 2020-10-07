@@ -1,5 +1,6 @@
 package com.anyvision.facekeyexample.prysm;
 
+import com.anyvision.facekeyexample.models.ChamadoGrafico;
 import com.anyvision.facekeyexample.models.SolicitationExtension;
 import com.anyvision.facekeyexample.models.VariableRow;
 import com.anyvision.facekeyexample.models.VariableRowChamado;
@@ -53,4 +54,7 @@ public interface AuthToken {
     @GET("AppVisionService.svc/ChangePassword")
     Call<Void> GetChangedPassword(@Header("SessionID") String SessionId, @Query("username") String username, @Query("oldHashPassword") String oldHashPassword, @Query("newHashPassword") String newHashPassword);
 
+    @Headers({"Accept: application/xml"})
+    @GET("AppVisionService.svc/GetVariableStatesByFilter?filters=$V.Gestao.Controle_salas*")
+    Call<ChamadoGrafico> GetGestaoControleSalas(@Header("SessionID") String SessionId);
 }

@@ -6,6 +6,7 @@ import org.simpleframework.xml.Path;
 import org.simpleframework.xml.Root;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 @Root(strict = false)
 public class SolicitationExtension {
@@ -107,31 +108,6 @@ public class SolicitationExtension {
     @Element(name = "Value", required = false)
     @Path("VariableState[11]")
     private int value11;
-
-    public int getValue1() { return value1; }
-    public int getValue2() { return value2; }
-    public int getValue3() { return value3; }
-    public int getValue4() { return value4; }
-    public int getValue5() { return value5; }
-    public int getValue6() { return value6; }
-    public int getValue7() { return value7; }
-    public int getValue8() { return value8; }
-    public int getValue9() { return value9; }
-    public int getValue10() { return value10; }
-    //public int getValue11() { return value11; }
-
-    //nomes das agencias
-    public String getName1() { return name1; }
-    public String getName2() { return name2; }
-    public String getName3() { return name3; }
-    public String getName4() { return name4; }
-    public String getName5() { return name5; }
-    public String getName6() { return name6; }
-    public String getName7() { return name7; }
-    public String getName8() { return name8; }
-    public String getName9() { return name9; }
-    public String getName10() { return name10; }
-    //public String getName11() { return name11; }
 
     //Recupera as solicitações que as agencias solicitaram
     public ArrayList<String> getlistaNames() {

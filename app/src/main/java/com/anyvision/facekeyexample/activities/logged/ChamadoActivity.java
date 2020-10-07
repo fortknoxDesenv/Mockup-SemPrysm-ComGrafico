@@ -25,6 +25,7 @@ public class ChamadoActivity extends AppCompatActivity {
     private Button btnSistemaIncendio;
     private Button btnIluminacao;
     private Button btnArCondicionado;
+    private Button btnGestao;
     private String typeAccount;
     private Authentication auth;
     private String chamadoDescription = "App.AGENCIA.POC.AGENCIA0001.6";
@@ -49,6 +50,7 @@ public class ChamadoActivity extends AppCompatActivity {
         btnSistemaIncendio = findViewById(R.id.btnSistemaIncendio);
         btnIluminacao = findViewById(R.id.btnHVAC);
         btnArCondicionado = findViewById(R.id.btnArCondicionado);
+        btnGestao = findViewById(R.id.btnGestao);
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         int size = sharedPreferences.getInt("chamadoDescriptions_size", MODE_PRIVATE);
@@ -63,6 +65,7 @@ public class ChamadoActivity extends AppCompatActivity {
         btnSistemaIncendio.setText(listaChamadoDescriptions.get(3));
         btnIluminacao.setText(listaChamadoDescriptions.get(4));
         btnArCondicionado.setText(listaChamadoDescriptions.get(5));
+        btnGestao.setText(listaChamadoDescriptions.get(6));
 
         btnCFTV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +132,18 @@ public class ChamadoActivity extends AppCompatActivity {
                     new MessageTopic(null, null, null);
                     auth.requestToken(chamadoDescription, "5");
                 } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        btnGestao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    ChamadoGraficoActivity.startActivity(ChamadoActivity.this);
+                }
+                catch (Exception e){
                     e.printStackTrace();
                 }
             }
