@@ -46,14 +46,25 @@ public class ChamadoGrafico {
     @Path("VariableState[4]")
     private int value4;
 
+    @Element(name = "Name", required = false)
+    @Path("VariableState[5]")
+    private String name5;
+
+    @Namespace(reference = "http://www.w3.org/2001/XMLSchema")
+    @Element(name = "Value", required = false)
+    @Path("VariableState[5]")
+    private int value5;
+
     //Recupera as solicitações que as agencias solicitaram
     public ArrayList<String> GetListaGestaoControleSala() {
         ArrayList<String> listaGestaoCtr = new ArrayList<String>();
 
-        if (name1 != null)
-            listaGestaoCtr.add(name1 + ";" + value1);
-        listaGestaoCtr.add(name2 + ";" + value2);
-        listaGestaoCtr.add(name3 + ";" + value3);
+        if (name1 != null) listaGestaoCtr.add(name1 + ";" + value1);
+        if (name2 != null) listaGestaoCtr.add(name2 + ";" + value2);
+        if (name3 != null) listaGestaoCtr.add(name3 + ";" + value3);
+        if (name4 != null) listaGestaoCtr.add(name4 + ";" + value4);
+        if (name5 != null) listaGestaoCtr.add(name5 + ";" + value5);
+
 
         return listaGestaoCtr;
     }

@@ -25,20 +25,31 @@ import com.anyvision.facekeyexample.activities.logged.MainActivity;
 import com.anyvision.facekeyexample.activities.logged.SolicitationExtensionActivity;
 import com.anyvision.facekeyexample.activities.logged.SolicitationHistoryApproved;
 import com.anyvision.facekeyexample.activities.logged.SolicitationHistoryReproved;
+import com.anyvision.facekeyexample.models.ArrayOfVariableState;
 import com.anyvision.facekeyexample.models.ChamadoGrafico;
+import com.anyvision.facekeyexample.models.GetGroups.ArrayOfGroupRow;
+import com.anyvision.facekeyexample.models.GetGroups.GroupRow;
 import com.anyvision.facekeyexample.models.GetVariables;
 import com.anyvision.facekeyexample.models.MessageTopic;
 import com.anyvision.facekeyexample.models.SolicitationExtension;
 import com.anyvision.facekeyexample.models.VariableRow;
 import com.anyvision.facekeyexample.models.VariableRowChamado;
+import com.anyvision.facekeyexample.models.VariableRowStateTeste;
 import com.anyvision.facekeyexample.utils.Enum;
 
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -118,7 +129,11 @@ public class Authentication extends Application {
                                 GetVariableStateSolicitHistory(token);
 
                             if (newValue == "descriptions")
-                                GetVariablesByFilterDescription(token);
+
+                                //teste
+                                GetGroups(token);
+
+//                                GetVariablesByFilterDescription(token);
 
                             if (newValue == "solicitationExtension")
                                 GetVariableSolicitationExtension(token);
@@ -128,6 +143,9 @@ public class Authentication extends Application {
 
                             if (newValue == "FirebaseNotification")
                                 NotifFirebaseSolicitation(token);
+
+                            if(newValue == "GRAFICO_GESTAO")
+                                GetChamadoControleSalaGrafico(token);
                         }
 
                         if (name != "aprovaReprovaExtesao")
@@ -757,6 +775,9 @@ public class Authentication extends Application {
 
                         if(comando.equals(Enum.LogarSemSesame.MUDARSENHA.toString()))
                         GetChangedPassword(token, usuario, hashpassword, senha);
+
+                        if(comando.equals(Enum.LogarSemSesame.GRAFICO_GESTAO.toString()))
+                            GetChamadoControleSalaGrafico(token);
                     }
 
                 } catch (Exception e) {
@@ -905,6 +926,7 @@ public class Authentication extends Application {
     });
     }
 
+
     public void GetChamadoControleSalaGrafico(final String SessionID) {
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -940,8 +962,6 @@ public class Authentication extends Application {
 
                     editor.apply();
 
-                    closeSession(SessionID);
-
                 } else {
                     assert response.errorBody() != null;
                     closeSession(SessionID);
@@ -954,6 +974,106 @@ public class Authentication extends Application {
             }
         });
     }
+
+//    public void GetChamadoControleSalaGrafico(final String SessionID) {
+//
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(serverLocalUrl)
+//                .addConverterFactory(SimpleXmlConverterFactory.create())
+//                .build();
+//        AuthToken tokenAuth = retrofit.create(AuthToken.class);
+//
+//        Call<ArrayOfVariableState> call = tokenAuth.GetGestaoControleSalas(SessionID);
+//
+//        call.enqueue(new Callback<ArrayOfVariableState>() {
+//            @RequiresApi(api = Build.VERSION_CODES.N)
+//            @Override
+//            public void onResponse(Call<ArrayOfVariableState> call, Response<ArrayOfVariableState> response) {
+//
+//                if (response.isSuccessful()) {
+//
+//                    ArrayOfVariableState liGestaoCtrSala = response.body();
+//
+//                    VariableRowStateTeste[] teste =  liGestaoCtrSala.getVariableStateTeste();
+////                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+////                    SharedPreferences.Editor editor = sharedPreferences.edit();
+////
+////                    closeSession(SessionID);
+////
+////                    ArrayList<String> listaDescriptions = liGestaoCtrSala.GetListaGestaoControleSala();
+////                    int valorTotal = liGestaoCtrSala.GetPorcentagemTotalGestaoControleSala();
+////
+////                    editor.putInt("chamado_gestao_valor_total", valorTotal);
+////                    editor.putInt("chamado_gestao_controle_sala_size", listaDescriptions.size());
+////                    for (int i = 0; i < liGestaoCtrSala.GetListaGestaoControleSala().size(); i++) {
+////                        editor.putString("chamado_gestao_controle_sala" + "_" + i, listaDescriptions.get(i).replace("Gestao.Controle_salas.",""));
+////                    }
+////
+////                    editor.apply();
+//
+//                    closeSession(SessionID);
+//
+//                } else {
+//                    assert response.errorBody() != null;
+//                    closeSession(SessionID);
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ArrayOfVariableState> call1, Throwable t) {
+//                Log.d("auth", t.getMessage());
+//            }
+//        });
+//    }
+
+    public void GetGroups(final String SessionID) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(serverLocalUrl)
+                .addConverterFactory(SimpleXmlConverterFactory.create())
+                .build();
+        AuthToken tokenAuth = retrofit.create(AuthToken.class);
+
+        Call<ArrayOfGroupRow> call = tokenAuth.GetGroups(SessionID);
+
+        call.enqueue(new Callback<ArrayOfGroupRow>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onResponse(Call<ArrayOfGroupRow> call, Response<ArrayOfGroupRow> response) {
+
+                if (response.isSuccessful()) {
+
+                    ArrayOfGroupRow liGestaoCtrSala = response.body();
+
+//                    GroupRow teste = liGestaoCtrSala.getGroup();
+                    List<GroupRow> teste = liGestaoCtrSala.getGroup();
+
+//                    String teste = liGestaoCtrSala.getGroupRow();
+
+                    closeSession(SessionID);
+
+                } else {
+                    assert response.errorBody() != null;
+                    closeSession(SessionID);
+                }
+            }
+            @Override
+            public void onFailure(Call<ArrayOfGroupRow> call1, Throwable t) {
+                Log.d("auth", t.getMessage());
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
     public static Context getContext() {

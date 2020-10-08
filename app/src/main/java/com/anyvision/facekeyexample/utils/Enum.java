@@ -27,6 +27,7 @@ public class Enum {
 
     public enum LogarSemSesame {
         LOGAR,
-        MUDARSENHA
+        MUDARSENHA,
+        GRAFICO_GESTAO
     }
 }

@@ -37,11 +37,24 @@ import com.anyvision.facekeyexample.models.GetVariables;
 import com.anyvision.facekeyexample.models.InfoMobile;
 import com.anyvision.facekeyexample.prysm.Authentication;
 import com.anyvision.facekeyexample.utils.Enum;
+import com.anyvision.ocr.network.HttpClient;
 import com.anyvision.sesame.Sesame;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class LoginActivity extends BaseActivity {
 
@@ -219,6 +232,7 @@ public class LoginActivity extends BaseActivity {
         GetVariables.getInstance().setEtAnyvisionUrl(anyvisionUrl.getText().toString());
         progressBar = findViewById(R.id.progress_bar);
         auth = new Authentication(GetVariables.getInstance().getServerUrl());
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Create channel to show notifications.

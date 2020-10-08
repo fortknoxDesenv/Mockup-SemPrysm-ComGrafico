@@ -15,6 +15,7 @@ import com.anyvision.facekeyexample.firebase.Firebase;
 import com.anyvision.facekeyexample.models.GetVariables;
 import com.anyvision.facekeyexample.models.MessageTopic;
 import com.anyvision.facekeyexample.prysm.Authentication;
+import com.anyvision.facekeyexample.utils.Enum;
 
 import java.util.ArrayList;
 
@@ -153,5 +154,11 @@ public class ChamadoActivity extends AppCompatActivity {
     public static void startActivity(Context from) {
         Intent intent = new Intent(from, ChamadoActivity.class);
         from.startActivity(intent);
+    }
+
+    public void onBackPressed(){
+        auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.LogarSemSesame.GRAFICO_GESTAO.toString());
+        MainActivity.startActivity(ChamadoActivity.this);
+        //finish();
     }
 }
