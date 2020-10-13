@@ -36,13 +36,15 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:theme">
-        <activity android:name=".activities.logged.ChamadoGraficoActivity"></activity>
+        <activity android:name=".activities.logged.ChamadoGraficoBarraActivity"></activity>
+        <activity android:name=".activities.logged.ChamadoGraficoActivity" />
+        <activity android:name=".activities.logged.ChamadoGraficoGruposActivity" />
         <activity
             android:name=".activities.logged.SolicitationHistoryApproved"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.logged.SolicitationHistoryReproved"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.logged.SolicitationExtensionActivity"
             android:screenOrientation="portrait" />

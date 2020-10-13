@@ -7,16 +7,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.MotionEvent;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.anyvision.facekeyexample.R;
 import com.anyvision.facekeyexample.models.GetVariables;
 import com.anyvision.facekeyexample.prysm.Authentication;
 import com.anyvision.facekeyexample.utils.Enum;
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -53,6 +52,7 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
         Description desc = new Description();
         desc.setText("Total de ocupação");
         desc.setTextSize(50f);
+
         pieChart.setDescription(desc);
         pieChart.setHoleRadius(25f);
         pieChart.setTransparentCircleRadius(25f);
@@ -80,17 +80,18 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
         pieDataSet.setSliceSpace(2f);
         pieDataSet.setValueTextSize(10f);
 
-        //TESTE
-        pieChart.setTouchEnabled(true);
-        pieChart.setHighlightPerTapEnabled(true);
-        pieChart.getCenterTextRadiusPercent();
+        Legend legend = pieChart.getLegend();
+        legend.setTextColor(Color.WHITE);
+        legend.setForm(Legend.LegendForm.CIRCLE);
 
+        pieChart.setNoDataText("Não ha informações no momento");
 
         PieData pieData = new PieData(pieDataSet);
 
         pieChart.setData(pieData);
         pieDataSet.setColors(ColorTemplate.PASTEL_COLORS); //roxo verde azul
-        pieChart.animateXY(1400, 1400);
+//        pieChart.animateXY(1400, 1400);
+        pieChart.animateX(1400, Easing.EasingOption.EaseInOutCirc);
 
         pieChart.setOnChartGestureListener(new OnChartGestureListener() {
             @Override
@@ -120,7 +121,7 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
             @Override
             public void onChartSingleTapped(MotionEvent me)
             {
-
+             ChamadoGraficoGruposActivity.startActivity(ChamadoGraficoActivity.this);
             }
 
             @Override
@@ -153,10 +154,4 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
         ChamadoActivity.startActivity(ChamadoGraficoActivity.this);
         //finish();
     }
-    /*  public void onBackPressed(){
-        PhotoActivity.startActivity(CameraActivity.this);
-        finish();
-    }*/
-
-
 }

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.telephony.SignalStrength;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -21,30 +20,21 @@ import com.android.volley.request.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.anyvision.facekeyexample.FacekeyApplication;
 import com.anyvision.facekeyexample.activities.LoginActivity;
-import com.anyvision.facekeyexample.activities.logged.MainActivity;
 import com.anyvision.facekeyexample.activities.logged.SolicitationExtensionActivity;
 import com.anyvision.facekeyexample.activities.logged.SolicitationHistoryApproved;
 import com.anyvision.facekeyexample.activities.logged.SolicitationHistoryReproved;
-import com.anyvision.facekeyexample.models.ArrayOfVariableState;
 import com.anyvision.facekeyexample.models.ChamadoGrafico;
-import com.anyvision.facekeyexample.models.GetGroups.ArrayOfGroupRow;
+import com.anyvision.facekeyexample.models.GetGroups.Groups;
 import com.anyvision.facekeyexample.models.GetGroups.GroupRow;
 import com.anyvision.facekeyexample.models.GetVariables;
 import com.anyvision.facekeyexample.models.MessageTopic;
 import com.anyvision.facekeyexample.models.SolicitationExtension;
 import com.anyvision.facekeyexample.models.VariableRow;
 import com.anyvision.facekeyexample.models.VariableRowChamado;
-import com.anyvision.facekeyexample.models.VariableRowStateTeste;
 import com.anyvision.facekeyexample.utils.Enum;
 
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -105,10 +95,9 @@ public class Authentication extends Application {
                 try {
                     token = cleanOUTPUT(response.body().string());
 
-                    if(usuarioLogin != null && senhaUsuarioLogin != null){
+                    if (usuarioLogin != null && senhaUsuarioLogin != null) {
                         hashpassword = md5(token + md5(usuarioLogin + senhaUsuarioLogin));
-                    }
-                    else {
+                    } else {
                         hashpassword = md5(token + md5(AccountType + AccountType));
                     }
 
@@ -129,11 +118,7 @@ public class Authentication extends Application {
                                 GetVariableStateSolicitHistory(token);
 
                             if (newValue == "descriptions")
-
-                                //teste
-                                GetGroups(token);
-
-//                                GetVariablesByFilterDescription(token);
+                                GetVariablesByFilterDescription(token);
 
                             if (newValue == "solicitationExtension")
                                 GetVariableSolicitationExtension(token);
@@ -144,8 +129,9 @@ public class Authentication extends Application {
                             if (newValue == "FirebaseNotification")
                                 NotifFirebaseSolicitation(token);
 
-                            if(newValue == "GRAFICO_GESTAO")
+                            if (newValue == "GRAFICO_GESTAO")
                                 GetChamadoControleSalaGrafico(token);
+                            GetGroups(token);
                         }
 
                         if (name != "aprovaReprovaExtesao")
@@ -188,7 +174,7 @@ public class Authentication extends Application {
                     Log.d("auth", String.valueOf(response.code()));
                     Log.d("auth", response.toString());
 
-                        setVariable(SessionId, name, newValue);
+                    setVariable(SessionId, name, newValue);
 
                 } else {
                     Log.d("ErroConexao", "FECHOU E ABRIU DENOVO in getAuthentication");
@@ -667,7 +653,7 @@ public class Authentication extends Application {
                 break;
             case 202:
                 Toast.makeText(getContext(), "Falha na alteração de senha, Por favor tente novamente!", Toast.LENGTH_LONG).show();
-               break;
+                break;
             case 401:
                 Toast.makeText(getContext(), "Senha ou usuário não confere, Por favor tente novamente!", Toast.LENGTH_LONG).show();
                 break;
@@ -770,13 +756,13 @@ public class Authentication extends Application {
                             mContext = FacekeyApplication.getAppContext();
                         }
 
-                        if(comando.equals(Enum.LogarSemSesame.LOGAR.toString()))
-                        GetAutenticarSemSesame(token, hashpassword, usuario);
+                        if (comando.equals(Enum.LogarSemSesame.LOGAR.toString()))
+                            GetAutenticarSemSesame(token, hashpassword, usuario);
 
-                        if(comando.equals(Enum.LogarSemSesame.MUDARSENHA.toString()))
-                        GetChangedPassword(token, usuario, hashpassword, senha);
+                        if (comando.equals(Enum.LogarSemSesame.MUDARSENHA.toString()))
+                            GetChangedPassword(token, usuario, hashpassword, senha);
 
-                        if(comando.equals(Enum.LogarSemSesame.GRAFICO_GESTAO.toString()))
+                        if (comando.equals(Enum.LogarSemSesame.GRAFICO_GESTAO.toString()))
                             GetChamadoControleSalaGrafico(token);
                     }
 
@@ -810,23 +796,21 @@ public class Authentication extends Application {
                 Log.d("GetAuthSEM-SESAME", response.toString());
 
                 if (response.isSuccessful()) {
-                    if (accountType.equals("AGENCIA")){
-                         GetVarDescriptBtnMainActivitySemSesame(SessionId);
-                    }
-                    else {
+                    if (accountType.equals("AGENCIA")) {
+                        GetVarDescriptBtnMainActivitySemSesame(SessionId);
+                    } else {
                         GetVariableSolicitationExtensionGeral(SessionId);
                     }
-                } else
-                    {
+                } else {
                     if (response.code() == 402)
                         showToast(response.code());
 
                     //Senha resetada, inserir nova senha
-                    if(response.code() == 406)
+                    if (response.code() == 406)
                         LoginActivity.AlterarSenhaLogin();
 
                     //Senha ou usuario incorreto
-                    if(response.code() == 401)
+                    if (response.code() == 401)
                         showToast(401);
 
                     LoginActivity.removeProgressBarSemSesame();
@@ -893,7 +877,7 @@ public class Authentication extends Application {
         });
     }
 
-    private void GetChangedPassword(final String token, final String username, final String oldHasPassword, final String novaSenha){
+    private void GetChangedPassword(final String token, final String username, final String oldHasPassword, final String novaSenha) {
 
         final String newHashPassword = md5(username + novaSenha);
 
@@ -908,22 +892,21 @@ public class Authentication extends Application {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 Log.d("erro", response.toString());
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     //Toast.makeText(getContext(), "Senha Alterada com Sucesso!", Toast.LENGTH_LONG);
                     showToast(201);
-                }
-                else{
+                } else {
                     //Toast.makeText(getContext(), "Falha na alteração de senha, Por favor tente novamente!", Toast.LENGTH_LONG);
                     showToast(202);
                     LoginActivity.AlterarSenhaLogin();
                 }
             }
 
-        @Override
-        public void onFailure(Call<Void> call, Throwable t) {
-            Log.d("auth", t.getMessage());
-        }
-    });
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.d("auth", t.getMessage());
+            }
+        });
     }
 
 
@@ -957,7 +940,7 @@ public class Authentication extends Application {
                     editor.putInt("chamado_gestao_valor_total", valorTotal);
                     editor.putInt("chamado_gestao_controle_sala_size", listaDescriptions.size());
                     for (int i = 0; i < liGestaoCtrSala.GetListaGestaoControleSala().size(); i++) {
-                        editor.putString("chamado_gestao_controle_sala" + "_" + i, listaDescriptions.get(i).replace("Gestao.Controle_salas.",""));
+                        editor.putString("chamado_gestao_controle_sala" + "_" + i, listaDescriptions.get(i).replace("Gestao.Controle_salas.", ""));
                     }
 
                     editor.apply();
@@ -975,57 +958,6 @@ public class Authentication extends Application {
         });
     }
 
-//    public void GetChamadoControleSalaGrafico(final String SessionID) {
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl(serverLocalUrl)
-//                .addConverterFactory(SimpleXmlConverterFactory.create())
-//                .build();
-//        AuthToken tokenAuth = retrofit.create(AuthToken.class);
-//
-//        Call<ArrayOfVariableState> call = tokenAuth.GetGestaoControleSalas(SessionID);
-//
-//        call.enqueue(new Callback<ArrayOfVariableState>() {
-//            @RequiresApi(api = Build.VERSION_CODES.N)
-//            @Override
-//            public void onResponse(Call<ArrayOfVariableState> call, Response<ArrayOfVariableState> response) {
-//
-//                if (response.isSuccessful()) {
-//
-//                    ArrayOfVariableState liGestaoCtrSala = response.body();
-//
-//                    VariableRowStateTeste[] teste =  liGestaoCtrSala.getVariableStateTeste();
-////                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-////                    SharedPreferences.Editor editor = sharedPreferences.edit();
-////
-////                    closeSession(SessionID);
-////
-////                    ArrayList<String> listaDescriptions = liGestaoCtrSala.GetListaGestaoControleSala();
-////                    int valorTotal = liGestaoCtrSala.GetPorcentagemTotalGestaoControleSala();
-////
-////                    editor.putInt("chamado_gestao_valor_total", valorTotal);
-////                    editor.putInt("chamado_gestao_controle_sala_size", listaDescriptions.size());
-////                    for (int i = 0; i < liGestaoCtrSala.GetListaGestaoControleSala().size(); i++) {
-////                        editor.putString("chamado_gestao_controle_sala" + "_" + i, listaDescriptions.get(i).replace("Gestao.Controle_salas.",""));
-////                    }
-////
-////                    editor.apply();
-//
-//                    closeSession(SessionID);
-//
-//                } else {
-//                    assert response.errorBody() != null;
-//                    closeSession(SessionID);
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ArrayOfVariableState> call1, Throwable t) {
-//                Log.d("auth", t.getMessage());
-//            }
-//        });
-//    }
-
     public void GetGroups(final String SessionID) {
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -1034,46 +966,43 @@ public class Authentication extends Application {
                 .build();
         AuthToken tokenAuth = retrofit.create(AuthToken.class);
 
-        Call<ArrayOfGroupRow> call = tokenAuth.GetGroups(SessionID);
+        Call<Groups> call = tokenAuth.GetGroups(SessionID);
 
-        call.enqueue(new Callback<ArrayOfGroupRow>() {
+        call.enqueue(new Callback<Groups>() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
-            public void onResponse(Call<ArrayOfGroupRow> call, Response<ArrayOfGroupRow> response) {
+            public void onResponse(Call<Groups> call, Response<Groups> response) {
 
                 if (response.isSuccessful()) {
 
-                    ArrayOfGroupRow liGestaoCtrSala = response.body();
 
-//                    GroupRow teste = liGestaoCtrSala.getGroup();
-                    List<GroupRow> teste = liGestaoCtrSala.getGroup();
+                    Groups listaGruposPrysm = response.body();
 
-//                    String teste = liGestaoCtrSala.getGroupRow();
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
 
                     closeSession(SessionID);
+
+                    ArrayList<String> listaGrupos = listaGruposPrysm.getGroup();
+                    editor.putInt("chamado_grafico_grupos_size", listaGrupos.size());
+                    for (int i = 0; i < listaGrupos.size(); i++) {
+                        editor.putString("chamado_grafico_grupos" + "_" + i, listaGrupos.get(i).toString());
+                    }
+
+                    editor.apply();
 
                 } else {
                     assert response.errorBody() != null;
                     closeSession(SessionID);
                 }
             }
+
             @Override
-            public void onFailure(Call<ArrayOfGroupRow> call1, Throwable t) {
+            public void onFailure(Call<Groups> call1, Throwable t) {
                 Log.d("auth", t.getMessage());
             }
         });
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
     public static Context getContext() {

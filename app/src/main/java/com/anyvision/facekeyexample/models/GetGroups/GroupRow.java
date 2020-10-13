@@ -71,11 +71,7 @@ public class GroupRow {
         return Description;
     }
 
-
-    public String getParameters() {
-        return Parameters;
-    }
-
+    public String getParameters() { return Parameters; }
 
     public String getFullParameters() {
         return FullParameters;

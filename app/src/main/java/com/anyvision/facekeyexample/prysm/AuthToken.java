@@ -1,8 +1,7 @@
 package com.anyvision.facekeyexample.prysm;
 
-import com.anyvision.facekeyexample.models.ArrayOfVariableState;
 import com.anyvision.facekeyexample.models.ChamadoGrafico;
-import com.anyvision.facekeyexample.models.GetGroups.ArrayOfGroupRow;
+import com.anyvision.facekeyexample.models.GetGroups.Groups;
 import com.anyvision.facekeyexample.models.SolicitationExtension;
 import com.anyvision.facekeyexample.models.VariableRow;
 import com.anyvision.facekeyexample.models.VariableRowChamado;
@@ -62,7 +61,7 @@ public interface AuthToken {
 
     @Headers({"Accept: application/xml"})
     @GET("AppVisionService.svc/GetGroups")
-    Call<ArrayOfGroupRow> GetGroups(@Header("SessionID") String SessionId);
+    Call<Groups> GetGroups(@Header("SessionID") String SessionId);
 
 //    @Headers({"Accept: application/xml"})
 //    @GET("AppVisionService.svc/GetVariableStatesByFilter?filters=$V.Gestao.Controle_salas*")
