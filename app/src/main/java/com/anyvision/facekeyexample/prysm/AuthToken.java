@@ -56,7 +56,7 @@ public interface AuthToken {
     Call<Void> GetChangedPassword(@Header("SessionID") String SessionId, @Query("username") String username, @Query("oldHashPassword") String oldHashPassword, @Query("newHashPassword") String newHashPassword);
 
     @Headers({"Accept: application/xml"})
-    @GET("AppVisionService.svc/GetVariableStatesByFilter?filters=$V.Gestao.Controle_salas*")
+    @GET("AppVisionService.svc/GetVariableStatesByFilter?filters=$V.Gestao.Graficos*")
     Call<ChamadoGrafico> GetGestaoControleSalas(@Header("SessionID") String SessionId);
 
     @Headers({"Accept: application/xml"})

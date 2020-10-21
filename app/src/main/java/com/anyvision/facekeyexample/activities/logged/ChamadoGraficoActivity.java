@@ -16,11 +16,14 @@ import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.ChartTouchListener;
 import com.github.mikephil.charting.listener.OnChartGestureListener;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -47,7 +50,7 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
             listaGestaoControle.add(sharedPreferences.getString("chamado_gestao_controle_sala" + "_" + i, null));
         }
 
-        PieChart pieChart = findViewById(R.id.pie_chart);
+        final PieChart pieChart = findViewById(R.id.pie_chart);
         pieChart.setUsePercentValues(true);
         Description desc = new Description();
         desc.setText("Total de ocupação");
@@ -76,7 +79,7 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
                 value.add(new PieEntry(converterValorFinal, nome));
         }
 
-        PieDataSet pieDataSet = new PieDataSet(value, "Ocupação");
+        PieDataSet pieDataSet = new PieDataSet(value, "");
         pieDataSet.setSliceSpace(2f);
         pieDataSet.setValueTextSize(10f);
 
@@ -92,6 +95,22 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
         pieDataSet.setColors(ColorTemplate.PASTEL_COLORS); //roxo verde azul
 //        pieChart.animateXY(1400, 1400);
         pieChart.animateX(1400, Easing.EasingOption.EaseInOutCirc);
+
+        pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+
+                float teste2 = e.getY();
+                PieEntry pe = (PieEntry) e;
+                String label = pe.getLabel();
+
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
 
         pieChart.setOnChartGestureListener(new OnChartGestureListener() {
             @Override

@@ -560,7 +560,6 @@ public class Authentication extends Application {
 
                     editor.apply();
 
-                    //teste
                     GetChamadoControleSalaGrafico(SessionID);
 
                     //closeSession(SessionID);
@@ -814,7 +813,7 @@ public class Authentication extends Application {
                         showToast(401);
 
                     LoginActivity.removeProgressBarSemSesame();
-                    closeSession(SessionId);
+                    //closeSession(SessionId);
                 }
             }
 
@@ -839,7 +838,7 @@ public class Authentication extends Application {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(Call<VariableRow> call, Response<VariableRow> response) {
-
+                Log.d("e", response.toString());
                 if (response.isSuccessful()) {
                     VariableRow desc = response.body();
 
@@ -859,7 +858,9 @@ public class Authentication extends Application {
                     Log.d("auth", response.message());
                     assert response.body() != null;
                     Log.d("auth", response.body().toString());
-                    closeSession(SessionID);
+                    //closeSession(SessionID);
+
+                    GetVariableDescripBtnChamado(SessionID);
 
                     LoginActivity.goToMainActivity();
 
@@ -924,7 +925,7 @@ public class Authentication extends Application {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(Call<ChamadoGrafico> call, Response<ChamadoGrafico> response) {
-
+                Log.d("e", response.toString());
                 if (response.isSuccessful()) {
 
                     ChamadoGrafico liGestaoCtrSala = response.body();
@@ -932,18 +933,18 @@ public class Authentication extends Application {
                     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
                     SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                    closeSession(SessionID);
-
                     ArrayList<String> listaDescriptions = liGestaoCtrSala.GetListaGestaoControleSala();
                     int valorTotal = liGestaoCtrSala.GetPorcentagemTotalGestaoControleSala();
 
                     editor.putInt("chamado_gestao_valor_total", valorTotal);
                     editor.putInt("chamado_gestao_controle_sala_size", listaDescriptions.size());
                     for (int i = 0; i < liGestaoCtrSala.GetListaGestaoControleSala().size(); i++) {
-                        editor.putString("chamado_gestao_controle_sala" + "_" + i, listaDescriptions.get(i).replace("Gestao.Controle_salas.", ""));
+                        editor.putString("chamado_gestao_controle_sala" + "_" + i, listaDescriptions.get(i).replace("Gestao.Graficos.", ""));
                     }
 
                     editor.apply();
+
+                    GetGroups(SessionID);
 
                 } else {
                     assert response.errorBody() != null;

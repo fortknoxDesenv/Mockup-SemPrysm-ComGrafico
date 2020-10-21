@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         btnPanico = findViewById(R.id.btnPanico);
         btnPorta = findViewById(R.id.btnPorta);
 
-        auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.request.chamadoDescriptionsButtons.toString());
+        //auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.request.chamadoDescriptionsButtons.toString());
 
         if (nameAgencia == null)
             nameAgencia = "App.AGENCIA.POC.AGENCIA0001";

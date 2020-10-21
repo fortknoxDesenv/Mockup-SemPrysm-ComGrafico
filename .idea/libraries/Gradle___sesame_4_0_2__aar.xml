@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: :sesame-4.0.2:@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e227c1d60bc34af20b6262d63d58d95a/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e227c1d60bc34af20b6262d63d58d95a/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9baed5a02ee1a3e24cbdc2ac75311d37/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9baed5a02ee1a3e24cbdc2ac75311d37/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
