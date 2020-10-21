@@ -1,0 +1,1 @@
+[{"outputType":{"type":"INSTANT_APP_MANIFEST"},"apkData":{"type":"MAIN","splits":[],"versionCode":7,"versionName":"3","enabled":true,"outputFile":"fk_3_ra_211020_1032.apk","fullName":"fklightDebug","baseName":"fklight-debug"},"path":"AndroidManifest.xml","properties":{"packageId":"com.anyvision.facekeyexample.fklight","split":"","minSdkVersion":"21"}}]

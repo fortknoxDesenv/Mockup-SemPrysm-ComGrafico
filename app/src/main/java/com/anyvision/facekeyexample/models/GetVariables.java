@@ -107,9 +107,9 @@ public class GetVariables {
         return senhaUsuarioLogin;
     }
 
-    public void setSenhaUsuarioLogin(String EditsenhaUsuarioLogin){
-        GetVariables.senhaUsuarioLogin = EditsenhaUsuarioLogin;
-    }
+//    public void setSenhaUsuarioLogin(String EditsenhaUsuarioLogin){
+//        GetVariables.senhaUsuarioLogin = EditsenhaUsuarioLogin;
+//    }
 
     public void setSpTypeAccount(String spTypeAccount) {
         GetVariables.spTypeAccount = spTypeAccount;

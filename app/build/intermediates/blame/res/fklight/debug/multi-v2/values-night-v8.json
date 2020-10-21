@@ -1,0 +1,53 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Projeto-Android\\PROJETOS\\Mockup-SemPrysm-ComGrafico\\app\\build\\intermediates\\incremental\\mergeFklightDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\620ae21f9ea84ce71c35597cc5e0cd4e\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,113,170",
+                        "endColumns": "57,56,41",
+                        "endOffsets": "108,165,207"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\dfa17af06254ea2f63fbed428f16b3c3\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593",
+                        "endColumns": "69,83,83,95,101,101,93",
+                        "endOffsets": "120,204,288,384,486,588,682"
+                    },
+                    "to": {
+                        "startLines": "6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "257,327,411,495,591,693,795",
+                        "endColumns": "69,83,83,95,101,101,93",
+                        "endOffsets": "322,406,490,586,688,790,884"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ewerton.richieri\\.gradle\\caches\\transforms-2\\files-2.1\\669128e3525de54454d92d4b613653f4\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "44",
+                        "endOffsets": "95"
+                    },
+                    "to": {
+                        "startLines": "5",
+                        "startColumns": "4",
+                        "startOffsets": "212",
+                        "endColumns": "44",
+                        "endOffsets": "252"
+                    }
+                }
+            ]
+        }
+    ]
+}

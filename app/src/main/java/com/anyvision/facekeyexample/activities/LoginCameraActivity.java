@@ -11,6 +11,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import androidx.fragment.app.FragmentManager;
 import com.anyvision.facekeyexample.R;
+import com.anyvision.facekeyexample.activities.logged.ChamadoActivity;
+import com.anyvision.facekeyexample.activities.logged.MainActivity;
 import com.anyvision.facekeyexample.models.AppData;
 import com.anyvision.facekeyexample.models.GetVariables;
 import com.anyvision.sesame.Sesame;
@@ -90,7 +92,7 @@ public class LoginCameraActivity extends BaseActivity implements FragmentCommuni
 
     private void startLiveness() {
 
-        Sesame.initialize(serverUrl, SERVER_TIMEOUT);
+        //Sesame.initialize(serverUrl, SERVER_TIMEOUT);
 
         if (anvSurfaceType == null)
             anvSurfaceType = AnvSurfaceType.DarkSurface;
@@ -109,8 +111,7 @@ public class LoginCameraActivity extends BaseActivity implements FragmentCommuni
 
             @Override
             public void showLivenessResults() {//Liveness process completed. video is ready to use.
-
-                LoginResultActivity.startActivity(LoginCameraActivity.this);
+                ChamadoActivity.startActivity(LoginCameraActivity.this);
                 finish();
             }
         });

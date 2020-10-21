@@ -75,7 +75,6 @@ public class LoginActivity extends BaseActivity {
     private TextView anyvisionUrl;
     private View SettingsComponent;
     private EditText etUsername;
-    private EditText editSenhaLogin;
     private Authentication auth;
     private static Thread LoginActivityThread;
     private static boolean enableBtnRegister;
@@ -108,7 +107,6 @@ public class LoginActivity extends BaseActivity {
         serverLocalUrl = findViewById(R.id.serverLocalUrl);
         anyvisionUrl = findViewById(R.id.anyvisionUrl);
         etUsername = findViewById(R.id.username);
-        editSenhaLogin = findViewById(R.id.editSenhaLogin);
 
         mContext = this;
 
@@ -248,7 +246,7 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    auth.requestToken(getString(R.string.AGENCIA0001_5), String.valueOf(true));
+                    //auth.requestToken(getString(R.string.AGENCIA0001_5), String.valueOf(true));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -271,32 +269,28 @@ public class LoginActivity extends BaseActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.clear();
                 GetVariables.getInstance().setServerUrl(serverLocalUrl.getText().toString());
-                auth.verifyServerStatus();
+                //auth.verifyServerStatus();
                 try {
-                    if (auth.getStatusServer()) {
+//                    if (auth.getStatusServer()) {
+                    if (true) {
                         if (etUsername.getText().toString().matches(""))
                             Toast.makeText(LoginActivity.this, getString(R.string.digite_nome_usuario), Toast.LENGTH_LONG).show();
-                        else if (editSenhaLogin.getText().toString().matches(""))
-                            Toast.makeText(LoginActivity.this, getString(R.string.digite_senha_usuario), Toast.LENGTH_LONG).show();
+
                         else {
-                            GetVariables.getInstance().setSenhaUsuarioLogin(editSenhaLogin.getText().toString());
+                            //GetVariables.getInstance().setSenhaUsuarioLogin(editSenhaLogin.getText().toString());
                             GetVariables.getInstance().setEtUsername(etUsername.getText().toString());
                             progressBar.setVisibility(View.VISIBLE);
                             //Sesame.initialize(anyvisionUrl.getText().toString(), 60000);
                             String typeAccount = GetVariables.getInstance().getSpTypeAccount();
 
-                            if (typeAccount.equals(Enum.AgReg.REGIONAL.toString()))
-                                auth.requestToken(getString(R.string.aprovaReprovaExtesao), getString(R.string.geral));
+//                            if (typeAccount.equals(Enum.AgReg.REGIONAL.toString()))
+//                                auth.requestToken(getString(R.string.aprovaReprovaExtesao), getString(R.string.geral));
+//
+//                            if (typeAccount.equals(Enum.AgReg.AGENCIA.toString())) {
+//                                auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.request.descriptions.toString());
+//                            }
 
-                            if (typeAccount.equals(Enum.AgReg.AGENCIA.toString())) {
-                                auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.request.descriptions.toString());
-                            }
-
-                            auth.GetLogarSemSesame(etUsername.getText().toString(), editSenhaLogin.getText().toString(), "LOGAR");
-
-                            //MainActivity.startActivity(LoginActivity.this);
-
-                            //LoginCameraActivity.startActivity(LoginActivity.this);
+                            LoginCameraActivity.startActivity(LoginActivity.this);
                         }
                     } else {
                         Toast.makeText(LoginActivity.this, getString(R.string.verifique_status_servidor), Toast.LENGTH_LONG).show();

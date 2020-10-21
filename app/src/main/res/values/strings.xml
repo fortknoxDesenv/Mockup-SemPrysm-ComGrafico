@@ -65,8 +65,7 @@
     <string name="falhaNaVerificacao">Falha na verificação! Por favor tente novamente</string>
     <string name="sesameVideoMp4">/SesameVideo.mp4</string>
     <string name="registrado">Registrado</string>
-    <!--    <string name="server_anyvision">http://latam-sesame.anyvision.co:3003</string>-->
-    <string name="server_anyvision">http://200.188.213.130:3003</string>
+    <string name="server_anyvision">_</string>
 
     <!-- LoginActivity -->
     <string name="enableBtnRegister">enableBtnRegister</string>
@@ -80,7 +79,8 @@
     <string name="verifique_status_servidor">Por favor, verifique o status do servidor local!</string>
 
     <!-- Servidor -->
-    <string name="servidorSesame">http://200.188.213.130:3003</string>
+<!--    <string name="servidorSesame">http://200.188.213.130:3003</string>-->
+    <string name="servidorSesame">_</string>
     <string name="password">#FKtec202000#</string>
 
 </resources>

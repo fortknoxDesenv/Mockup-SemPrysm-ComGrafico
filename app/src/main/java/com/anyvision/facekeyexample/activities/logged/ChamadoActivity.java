@@ -28,15 +28,15 @@ public class ChamadoActivity extends AppCompatActivity {
     private Button btnArCondicionado;
     private Button btnGestao;
     private String typeAccount;
-    private Authentication auth;
-    private String chamadoDescription = "App.AGENCIA.POC.AGENCIA0001.6";
+    //private Authentication auth;
+    //private String chamadoDescription = "App.AGENCIA.POC.AGENCIA0001.6";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chamado);
 
-        auth = new Authentication(GetVariables.getInstance().getServerUrl());
+        //auth = new Authentication(GetVariables.getInstance().getServerUrl());
 
         typeAccount = GetVariables.getInstance().getSpTypeAccount();
 
@@ -61,82 +61,82 @@ public class ChamadoActivity extends AppCompatActivity {
             listaChamadoDescriptions.add(sharedPreferences.getString("chamado" + "_" + i, null));
         }
 
-        btnCFTV.setText(listaChamadoDescriptions.get(1));
-        btbAlarmeChamado.setText(listaChamadoDescriptions.get(2));
-        btnSistemaIncendio.setText(listaChamadoDescriptions.get(3));
-        btnIluminacao.setText(listaChamadoDescriptions.get(4));
-        btnArCondicionado.setText(listaChamadoDescriptions.get(5));
-        btnGestao.setText(listaChamadoDescriptions.get(6));
+//        btnCFTV.setText(listaChamadoDescriptions.get(1));
+//        btbAlarmeChamado.setText(listaChamadoDescriptions.get(2));
+//        btnSistemaIncendio.setText(listaChamadoDescriptions.get(3));
+//        btnIluminacao.setText(listaChamadoDescriptions.get(4));
+//        btnArCondicionado.setText(listaChamadoDescriptions.get(5));
+//        btnGestao.setText(listaChamadoDescriptions.get(6));
 
-        btnCFTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    Firebase.getInstance().sendNotification(true, GetVariables.getInstance().getEtUsername());
+        //btnCFTV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                try {
+//                    Firebase.getInstance().sendNotification(true, GetVariables.getInstance().getEtUsername());
+//
+//                    new MessageTopic(null, null, null);
+//                    auth.requestToken(chamadoDescription, "1");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+           // }
+        //});
 
-                    new MessageTopic(null, null, null);
-                    auth.requestToken(chamadoDescription, "1");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        //btbAlarmeChamado.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                try {
+//                    Firebase.getInstance().sendNotification(true, GetVariables.getInstance().getEtUsername());
+//
+//                    new MessageTopic(null, null, null);
+//                    auth.requestToken(chamadoDescription, "2");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+            //}
+        //});
 
-        btbAlarmeChamado.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    Firebase.getInstance().sendNotification(true, GetVariables.getInstance().getEtUsername());
+        //btnSistemaIncendio.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                try {
+//                    Firebase.getInstance().sendNotification(true, GetVariables.getInstance().getEtUsername());
+//
+//                    new MessageTopic(null, null, null);
+//                    auth.requestToken(chamadoDescription, "3");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+        //});
 
-                    new MessageTopic(null, null, null);
-                    auth.requestToken(chamadoDescription, "2");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+//        btnIluminacao.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    Firebase.getInstance().sendNotification(true, GetVariables.getInstance().getEtUsername());
+//
+//                    new MessageTopic(null, null, null);
+//                    auth.requestToken(chamadoDescription, "4");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
 
-        btnSistemaIncendio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    Firebase.getInstance().sendNotification(true, GetVariables.getInstance().getEtUsername());
-
-                    new MessageTopic(null, null, null);
-                    auth.requestToken(chamadoDescription, "3");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        btnIluminacao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Firebase.getInstance().sendNotification(true, GetVariables.getInstance().getEtUsername());
-
-                    new MessageTopic(null, null, null);
-                    auth.requestToken(chamadoDescription, "4");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        btnArCondicionado.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Firebase.getInstance().sendNotification(true, GetVariables.getInstance().getEtUsername());
-
-                    new MessageTopic(null, null, null);
-                    auth.requestToken(chamadoDescription, "5");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+//        btnArCondicionado.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    Firebase.getInstance().sendNotification(true, GetVariables.getInstance().getEtUsername());
+//
+//                    new MessageTopic(null, null, null);
+//                    auth.requestToken(chamadoDescription, "5");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
 
         btnGestao.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,7 +157,7 @@ public class ChamadoActivity extends AppCompatActivity {
     }
 
     public void onBackPressed(){
-        auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.LogarSemSesame.GRAFICO_GESTAO.toString());
+        //auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.LogarSemSesame.GRAFICO_GESTAO.toString());
         MainActivity.startActivity(ChamadoActivity.this);
         //finish();
     }

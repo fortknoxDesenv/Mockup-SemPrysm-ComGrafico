@@ -78,7 +78,7 @@ public class LoginResultActivity extends BaseActivity implements FragmentCommuni
         authenticate();
 
         typeAccount = GetVariables.getInstance().getSpTypeAccount();
-        auth = new Authentication(GetVariables.getInstance().getServerUrl());
+        //auth = new Authentication(GetVariables.getInstance().getServerUrl());
 
         tryAgainContainer.setOnClickListener(new View.OnClickListener() {
 
