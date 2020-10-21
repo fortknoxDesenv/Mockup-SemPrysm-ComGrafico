@@ -89,10 +89,10 @@ public class Notification extends FirebaseMessagingService {
                 LoginActivity.startThreadLogin();
             }
 
-            if(SolicitationExtensionActivity.onActive()){
-                auth = new Authentication(GetVariables.getInstance().getServerUrl());
-                auth.requestToken("aprovaReprovaExtesao", "FirebaseNotification");
-            }
+//            if(SolicitationExtensionActivity.onActive()){
+//                auth = new Authentication(GetVariables.getInstance().getServerUrl());
+//                auth.requestToken("aprovaReprovaExtesao", "FirebaseNotification");
+//            }
 
             // ...
             showNotification(title, messageBody);

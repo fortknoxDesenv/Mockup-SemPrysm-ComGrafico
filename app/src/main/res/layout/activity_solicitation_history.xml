@@ -97,6 +97,15 @@
             android:layout_centerInParent="true"
             android:layout_height="100dp" />
 
+        <TextView
+            android:id="@+id/txtSolicitation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="370dp"
+            android:text="No momento você não tem novas solicitações" />
+
         <ImageView
             android:id="@+id/sicredi_2"
             android:layout_width="200dp"

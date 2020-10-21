@@ -4,20 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.anyvision.facekeyexample.R;
-import com.anyvision.facekeyexample.firebase.Firebase;
 import com.anyvision.facekeyexample.models.GetVariables;
-import com.anyvision.facekeyexample.models.MessageTopic;
-import com.anyvision.facekeyexample.prysm.Authentication;
-import com.anyvision.facekeyexample.utils.Enum;
-
-import java.util.ArrayList;
 
 public class ChamadoActivity extends AppCompatActivity {
 
@@ -53,13 +45,13 @@ public class ChamadoActivity extends AppCompatActivity {
         btnArCondicionado = findViewById(R.id.btnArCondicionado);
         btnGestao = findViewById(R.id.btnGestao);
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        int size = sharedPreferences.getInt("chamadoDescriptions_size", MODE_PRIVATE);
-        final ArrayList<String> listaChamadoDescriptions = new ArrayList<String>(size);
-
-        for (int i = 0; i < size; i++) {
-            listaChamadoDescriptions.add(sharedPreferences.getString("chamado" + "_" + i, null));
-        }
+//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        int size = sharedPreferences.getInt("chamadoDescriptions_size", MODE_PRIVATE);
+//        final ArrayList<String> listaChamadoDescriptions = new ArrayList<String>(size);
+//
+//        for (int i = 0; i < size; i++) {
+//            listaChamadoDescriptions.add(sharedPreferences.getString("chamado" + "_" + i, null));
+//        }
 
 //        btnCFTV.setText(listaChamadoDescriptions.get(1));
 //        btbAlarmeChamado.setText(listaChamadoDescriptions.get(2));
@@ -138,17 +130,17 @@ public class ChamadoActivity extends AppCompatActivity {
 //            }
 //        });
 
-        btnGestao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try{
-                    ChamadoGraficoActivity.startActivity(ChamadoActivity.this);
-                }
-                catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-        });
+//        btnGestao.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try{
+//                    ChamadoGraficoActivity.startActivity(ChamadoActivity.this);
+//                }
+//                catch (Exception e){
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
     }
 
     public static void startActivity(Context from) {
@@ -158,7 +150,6 @@ public class ChamadoActivity extends AppCompatActivity {
 
     public void onBackPressed(){
         //auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.LogarSemSesame.GRAFICO_GESTAO.toString());
-        MainActivity.startActivity(ChamadoActivity.this);
-        //finish();
+        ComandosActivity.startActivity(ChamadoActivity.this);
     }
 }

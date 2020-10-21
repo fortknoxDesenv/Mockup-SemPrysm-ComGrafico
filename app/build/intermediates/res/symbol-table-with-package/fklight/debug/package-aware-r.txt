@@ -1481,6 +1481,7 @@ id btnEnviar
 id btnExtend
 id btnExtend2
 id btnGestao
+id btnGestaoGraficos
 id btnHVAC
 id btnHistBackSolicit
 id btnHistBackSolicit_Reproved
@@ -1492,6 +1493,9 @@ id btnPrevious
 id btnReprovado
 id btnSend
 id btnSistemaIncendio
+id btnTelaChamado
+id btnTelaComandosMainActivity
+id btnTelaSolicitationActivity
 id buttonPanel
 id buttonsLayout
 id calligraphy_tag_id
@@ -2012,6 +2016,7 @@ layout activity_chamado_grafico
 layout activity_chamado_grafico_barra
 layout activity_chamado_grafico_barra2
 layout activity_chamado_grafico_grupo
+layout activity_comandos
 layout activity_enrollment
 layout activity_instructions
 layout activity_login

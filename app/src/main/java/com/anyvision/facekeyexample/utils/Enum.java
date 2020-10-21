@@ -14,10 +14,10 @@ public class Enum {
         chamadoDescriptionsButtons,
     }
 
-    public enum variableState {
-        APROVADO,
-        REPROVADO
-    }
+//    public enum variableState {
+//        APROVADO,
+//        REPROVADO
+//    }
 
     public enum SharedPrivate {
         TIPO_AGENCIA_REGIONAL,
@@ -29,5 +29,12 @@ public class Enum {
         LOGAR,
         MUDARSENHA,
         GRAFICO_GESTAO
+    }
+
+    public enum StatusSolicitacao{
+        AGUARDANDO,
+        APROVADO,
+        REPROVADO;
+
     }
 }

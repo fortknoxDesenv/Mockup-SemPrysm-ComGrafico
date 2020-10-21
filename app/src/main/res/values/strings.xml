@@ -79,7 +79,7 @@
     <string name="verifique_status_servidor">Por favor, verifique o status do servidor local!</string>
 
     <!-- Servidor -->
-<!--    <string name="servidorSesame">http://200.188.213.130:3003</string>-->
+    <!--    <string name="servidorSesame">http://200.188.213.130:3003</string>-->
     <string name="servidorSesame">_</string>
     <string name="password">#FKtec202000#</string>
 

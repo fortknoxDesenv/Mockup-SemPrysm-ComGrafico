@@ -36,7 +36,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:theme">
-        <activity android:name=".activities.logged.ChamadoGraficoBarraActivity"></activity>
+        <activity android:name=".activities.logged.ComandosActivity"></activity>
+        <activity android:name=".activities.logged.ChamadoGraficoBarraActivity" />
         <activity android:name=".activities.logged.ChamadoGraficoActivity" />
         <activity android:name=".activities.logged.ChamadoGraficoGruposActivity" />
         <activity

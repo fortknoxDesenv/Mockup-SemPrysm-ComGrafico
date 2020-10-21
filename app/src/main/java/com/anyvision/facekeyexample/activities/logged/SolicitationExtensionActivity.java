@@ -69,27 +69,28 @@ public class SolicitationExtensionActivity extends AppCompatActivity {
 
         btnAprovado = findViewById(R.id.btnAprovado);
         btnReprovado = findViewById(R.id.btnReprovado);
-        serverLocalUrl = findViewById(R.id.serverLocalUrl);
+        //serverLocalUrl = findViewById(R.id.serverLocalUrl);
+        key = false;
 
         progressBar = findViewById(R.id.progressBarSolicit);
         progressBar.setVisibility(View.GONE);
         txtSolicitation = findViewById(R.id.txtSolicitation);
-        txtSolicitation.setVisibility(View.INVISIBLE);
+        txtSolicitation.setVisibility(View.GONE);
 
-        finishSolicitationExtension = this;
-        AllowGetlistSolicitation = true;
+//        finishSolicitationExtension = this;
+//        AllowGetlistSolicitation = true;
 
-        auth = new Authentication(GetVariables.getInstance().getServerUrl());
+        //auth = new Authentication(GetVariables.getInstance().getServerUrl());
 
-        if (GetVariables.getInstance().getServerUrl() == null)
-            GetVariables.getInstance().setServerUrl(serverLocalUrl.getText().toString());
+//        if (GetVariables.getInstance().getServerUrl() == null)
+//            GetVariables.getInstance().setServerUrl(serverLocalUrl.getText().toString());
 
         btnAprovado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if (liHistApproved.size() == 0)
-                    auth.requestToken("aprovaReprovaExtesao", Enum.request.state.toString());
+//
+//                if (liHistApproved.size() == 0)
+//                    auth.requestToken("aprovaReprovaExtesao", Enum.request.state.toString());
                 SolicitationHistoryApproved.startActivity(SolicitationExtensionActivity.this);
             }
         });
@@ -98,8 +99,8 @@ public class SolicitationExtensionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (liHistReproved.size() == 0)
-                    auth.requestToken("aprovaReprovaExtesao", Enum.request.state.toString());
+//                if (liHistReproved.size() == 0)
+//                    auth.requestToken("aprovaReprovaExtesao", Enum.request.state.toString());
                 SolicitationHistoryReproved.startActivity(SolicitationExtensionActivity.this);
             }
         });
@@ -107,112 +108,157 @@ public class SolicitationExtensionActivity extends AppCompatActivity {
         final RecyclerView recyclerView = findViewById(R.id.recyclerViewMain);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        SharedPreferences prefDescriptions = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        int size = prefDescriptions.getInt("solicitacao_size", MODE_PRIVATE);
-        listaDescriptions = new ArrayList<String>(size);
-        for (int i = 0; i < size; i++) {
-            listaDescriptions.add(prefDescriptions.getString("solicitacao" + "_" + i, null).replace("App.", ""));
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String statusSolicitacao = preferences.getString("StatusSolicitacao", null);
+        listaDescriptions = new ArrayList<String>();
+
+        if (statusSolicitacao != null && statusSolicitacao.equals(Enum.StatusSolicitacao.AGUARDANDO.toString())) {
+            listaDescriptions.add("Solicitação");
+            key = false;
+        } else {
+            progressBar.setVisibility(View.VISIBLE);
+            key = true;
         }
 
-        if ((listaDescriptions == null) || listaDescriptions.size() == 0) {
-            progressBar.setVisibility(View.VISIBLE);
-        }
+//        SharedPreferences prefDescriptions = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        int size = prefDescriptions.getInt("solicitacao_size", MODE_PRIVATE);
+//        listaDescriptions = new ArrayList<String>(size);
+//        for (int i = 0; i < size; i++) {
+//            listaDescriptions.add(prefDescriptions.getString("solicitacao" + "_" + i, null).replace("App.", ""));
+//        }
+
+//        if ((listaDescriptions == null) || listaDescriptions.size() == 0) {
+//            progressBar.setVisibility(View.VISIBLE);
+//        }
         adapter = new NewAdapter(listaDescriptions, SolicitationExtensionActivity.this);
+
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
         //list historyAproved
-        SharedPreferences prefHistApproved = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        int sizeLiHistApproved = prefHistApproved.getInt("solicitacaoAprovada_size", MODE_PRIVATE);
-        final ArrayList<String> liApproved = new ArrayList<String>(sizeLiHistApproved);
-        for (int i = 0; i < sizeLiHistApproved; i++) {
-            liApproved.add(prefHistApproved.getString("solicitacaoAprovada" + "_" + i, null));
-            Log.d("arrayHist", liApproved.get(i));
-        }
+//        SharedPreferences prefHistApproved = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        int sizeLiHistApproved = prefHistApproved.getInt("solicitacaoAprovada_size", MODE_PRIVATE);
+//        final ArrayList<String> liApproved = new ArrayList<String>(sizeLiHistApproved);
+//        for (int i = 0; i < sizeLiHistApproved; i++) {
+//            liApproved.add(prefHistApproved.getString("solicitacaoAprovada" + "_" + i, null));
+//            Log.d("arrayHist", liApproved.get(i));
+//        }
 
-        liHistApproved = liApproved;
+//        liHistApproved = liApproved;
+//
+//        //list historyReproved
+//        SharedPreferences prefHistReproved = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        int sizeLiHistReproved = prefHistReproved.getInt("solicitacaoReprovada_size", MODE_PRIVATE);
+//        final ArrayList<String> liReproveed = new ArrayList<String>(sizeLiHistReproved);
+//        for (int i = 0; i < sizeLiHistReproved; i++) {
+//            liReproveed.add(prefHistReproved.getString("solicitacaoReprovada" + "_" + i, null));
+//            Log.d("arrayHist", liReproveed.get(i));
+//        }
+//
+//        liHistReproved = liReproveed;
 
-        //list historyReproved
-        SharedPreferences prefHistReproved = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        int sizeLiHistReproved = prefHistReproved.getInt("solicitacaoReprovada_size", MODE_PRIVATE);
-        final ArrayList<String> liReproveed = new ArrayList<String>(sizeLiHistReproved);
-        for (int i = 0; i < sizeLiHistReproved; i++) {
-            liReproveed.add(prefHistReproved.getString("solicitacaoReprovada" + "_" + i, null));
-            Log.d("arrayHist", liReproveed.get(i));
-        }
 
-        liHistReproved = liReproveed;
         solicitationThread = new Thread() {
             @Override
             public void run() {
                 try {
-                    while (!isInterrupted()) {
-                        Thread.sleep(2000);
+                    while (key) {
+                        Thread.sleep(1000);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-
-                                if (AllowGetlistSolicitation) {
-                                    AllowGetlistSolicitation = false;
-
-                                    final SharedPreferences prefDescriptions = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                                    int size = prefDescriptions.getInt("solicitacao_size", MODE_PRIVATE);
-                                    ArrayList<String> listaDescription = new ArrayList<String>(size);
-                                    for (int i = 0; i < size; i++) {
-                                        listaDescription.add(prefDescriptions.getString("solicitacao" + "_" + i, null));
-                                    }
-
-                                    if (listaDescription.size() == 0)
-                                        listaDescription = listaDescriptions;
-
-                                    if (listaDescription.size() > listaDescriptions.size()) {
-                                        for (int i = 0; i < listaDescription.size(); i++) {
-                                            if (!listaDescriptions.contains(listaDescription.get(i))) {
-                                                listaDescriptions.add(0, listaDescription.get(i).replace("App.", ""));
-                                                adapter.notifyDataSetChanged();
-                                                if (listaDescriptions.size() == 0) {
-                                                    setAllowGetlistSolicitation();
-                                                } else {
-                                                }
-                                                adapter.notifyItemInserted(0);
-                                                if (refresh) {
-                                                    refresh = false;
-                                                }
-                                            }
-                                            if (adapter.getItemCount() != listaDescriptions.size()) {
-                                                finish();
-                                                startActivity(getIntent());
-                                            }
-                                        }
-                                        adapter.notifyDataSetChanged();
-                                    }
-                                    if (refresh) {
-                                        refresh = false;
-                                    }
-                                    if (!enableProgressBarVisible)
-                                    progressBar.setVisibility(View.GONE);
-                                    enableProgressBarVisible = true;
-                                    if (listaDescriptions.size() == 0)
+                                if (listaDescriptions == null || listaDescriptions.size() == 0) {
+                                    try {
+                                        progressBar.setVisibility(View.GONE);
                                         txtSolicitation.setVisibility(View.VISIBLE);
-                                    else {
-                                        txtSolicitation.setVisibility(View.GONE);
+                                        key = false;
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
                                     }
-                                }
-                                if (listaDescriptions.size() == 0) {
-                                    txtSolicitation.setVisibility(View.VISIBLE);
-                                    progressBar.setVisibility(View.GONE);
-                                } else {
-                                    txtSolicitation.setVisibility(View.GONE);
                                 }
                             }
                         });
                     }
-                } catch (InterruptedException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         };
         solicitationThread.start();
+
+
+//        solicitationThread = new Thread() {
+//            @Override
+//            public void run() {
+//                try {
+//                    while (!isInterrupted()) {
+//                        Thread.sleep(2000);
+//                        runOnUiThread(new Runnable() {
+//                            @Override
+//                            public void run() {
+//
+//                                if (AllowGetlistSolicitation) {
+//                                    AllowGetlistSolicitation = false;
+//
+//                                    final SharedPreferences prefDescriptions = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//                                    int size = prefDescriptions.getInt("solicitacao_size", MODE_PRIVATE);
+//                                    ArrayList<String> listaDescription = new ArrayList<String>(size);
+//                                    for (int i = 0; i < size; i++) {
+//                                        listaDescription.add(prefDescriptions.getString("solicitacao" + "_" + i, null));
+//                                    }
+//
+//                                    if (listaDescription.size() == 0)
+//                                        listaDescription = listaDescriptions;
+//
+//                                    if (listaDescription.size() > listaDescriptions.size()) {
+//                                        for (int i = 0; i < listaDescription.size(); i++) {
+//                                            if (!listaDescriptions.contains(listaDescription.get(i))) {
+//                                                listaDescriptions.add(0, listaDescription.get(i).replace("App.", ""));
+//                                                adapter.notifyDataSetChanged();
+//                                                if (listaDescriptions.size() == 0) {
+//                                                    setAllowGetlistSolicitation();
+//                                                } else {
+//                                                }
+//                                                adapter.notifyItemInserted(0);
+//                                                if (refresh) {
+//                                                    refresh = false;
+//                                                }
+//                                            }
+//                                            if (adapter.getItemCount() != listaDescriptions.size()) {
+//                                                finish();
+//                                                startActivity(getIntent());
+//                                            }
+//                                        }
+//                                        adapter.notifyDataSetChanged();
+//                                    }
+//                                    if (refresh) {
+//                                        refresh = false;
+//                                    }
+//                                    if (!enableProgressBarVisible)
+//                                    progressBar.setVisibility(View.GONE);
+//                                    enableProgressBarVisible = true;
+//                                    if (listaDescriptions.size() == 0)
+//                                        txtSolicitation.setVisibility(View.VISIBLE);
+//                                    else {
+//                                        txtSolicitation.setVisibility(View.GONE);
+//                                    }
+//                                }
+//                                if (listaDescriptions.size() == 0) {
+//                                    txtSolicitation.setVisibility(View.VISIBLE);
+//                                    progressBar.setVisibility(View.GONE);
+//                                } else {
+//                                    txtSolicitation.setVisibility(View.GONE);
+//                                }
+//                            }
+//                        });
+//                    }
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        };
+//        solicitationThread.start();
         ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
@@ -223,35 +269,35 @@ public class SolicitationExtensionActivity extends AppCompatActivity {
             public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
 
                 try {
-                    if (auth.getStatusServer()) {
-                        if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+                    //if (auth.getStatusServer()) {
+                    if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
 
-                            Bitmap icon;
-                            View itemView = viewHolder.itemView;
-                            float height = (float) itemView.getBottom() - (float) itemView.getTop();
-                            float width = height / 3;
+                        Bitmap icon;
+                        View itemView = viewHolder.itemView;
+                        float height = (float) itemView.getBottom() - (float) itemView.getTop();
+                        float width = height / 3;
 
-                            if (dX > 0) {
-                                p.setColor(Color.parseColor("#388E3C"));
-                                RectF background = new RectF((float) itemView.getLeft(), (float) itemView.getTop() + 2, dX, (float) itemView.getBottom() - 2);
-                                c.drawRect(background, p);
-                                icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_ok_new);
-                                RectF icon_dest = new RectF((float) itemView.getLeft() + width + 40, (float) itemView.getTop() + width, (float) itemView.getLeft() + 2 * width + 40, (float) itemView.getBottom() - width);
-                                c.drawBitmap(icon, null, icon_dest, p);
+                        if (dX > 0) {
+                            p.setColor(Color.parseColor("#388E3C"));
+                            RectF background = new RectF((float) itemView.getLeft(), (float) itemView.getTop() + 2, dX, (float) itemView.getBottom() - 2);
+                            c.drawRect(background, p);
+                            icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_ok_new);
+                            RectF icon_dest = new RectF((float) itemView.getLeft() + width + 40, (float) itemView.getTop() + width, (float) itemView.getLeft() + 2 * width + 40, (float) itemView.getBottom() - width);
+                            c.drawBitmap(icon, null, icon_dest, p);
 
-                            } else {
-                                p.setColor(Color.parseColor("#D32F2F"));
-                                RectF background = new RectF((float) itemView.getRight() + dX, (float) itemView.getTop() + 2, (float) itemView.getRight(), (float) itemView.getBottom() - 2);
-                                c.drawRect(background, p);
-                                icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_no_g);
-                                RectF icon_dest = new RectF((float) itemView.getRight() - 2 * width - 40, (float) itemView.getTop() + width + 5, (float) itemView.getRight() - width - 40, (float) itemView.getBottom() - width);
-                                c.drawBitmap(icon, null, icon_dest, p);
-                            }
+                        } else {
+                            p.setColor(Color.parseColor("#D32F2F"));
+                            RectF background = new RectF((float) itemView.getRight() + dX, (float) itemView.getTop() + 2, (float) itemView.getRight(), (float) itemView.getBottom() - 2);
+                            c.drawRect(background, p);
+                            icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_no_g);
+                            RectF icon_dest = new RectF((float) itemView.getRight() - 2 * width - 40, (float) itemView.getTop() + width + 5, (float) itemView.getRight() - width - 40, (float) itemView.getBottom() - width);
+                            c.drawBitmap(icon, null, icon_dest, p);
                         }
-                        super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
-                    } else {
-                        Toast.makeText(SolicitationExtensionActivity.this, "Por favor, verifique o status do servidor local!", Toast.LENGTH_LONG).show();
                     }
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+//                    } else {
+//                        Toast.makeText(SolicitationExtensionActivity.this, "Por favor, verifique o status do servidor local!", Toast.LENGTH_LONG).show();
+//                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -261,7 +307,7 @@ public class SolicitationExtensionActivity extends AppCompatActivity {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 try {
-                    if (auth.getStatusServer()) {
+                    //if (auth.getStatusServer()) {
                         //direction 4 is Left and direction 8 is Right
                         int pos = viewHolder.getAdapterPosition();
                         String nmAgenciaSelecionada = String.valueOf(listaDescriptions.get(pos));
@@ -277,7 +323,6 @@ public class SolicitationExtensionActivity extends AppCompatActivity {
                             String topic = "AGENCIA";
 
                             new MessageTopic(topic, title, message);
-                            Log.d("mensagem_Firebase", String.valueOf(direction) + "armazenou no message topic");
                         }
 
                         if (direction == RIGHT) {
@@ -286,22 +331,27 @@ public class SolicitationExtensionActivity extends AppCompatActivity {
                             String topic = "AGENCIA";
 
                             new MessageTopic(topic, title, message);
-                            Log.d("mensagem_Firebase", String.valueOf(direction) + "armazenou no message topic");
                         }
 
-                        //O valor vai vir Solicita.000*, esta função divide Solicita / 000 para gravar no array abaixo e fazer a requisição no auth.request() com a solicitação correta.
-                        String teste[] = nmAgenciaSelecionada.split("\\.");
-                        //pega somente o nome da agencia
-                        String refNameAgencia = teste[1];
+//                        //O valor vai vir Solicita.000*, esta função divide Solicita / 000 para gravar no array abaixo e fazer a requisição no auth.request() com a solicitação correta.
+//                        String teste[] = nmAgenciaSelecionada.split("\\.");
+//                        //pega somente o nome da agencia
+//                        String refNameAgencia = teste[1];
 
                         //if left then reprovado else aprovado
-                        newValue = String.valueOf(direction == LEFT ? reprovado : aprovado);
+//                        newValue = String.valueOf(direction == LEFT ? reprovado : aprovado);
+                        if (direction == LEFT) {
+                            editor.putString("StatusSolicitacao", Enum.StatusSolicitacao.REPROVADO.toString());
+                        } else {
+                            editor.putString("StatusSolicitacao", Enum.StatusSolicitacao.APROVADO.toString());
+                        }
+                        editor.apply();
 
-                        auth.requestToken("App.REGIONAL.POC.AGENCIA" + refNameAgencia + ".Reprogramacao", newValue);
+                        //auth.requestToken("App.REGIONAL.POC.AGENCIA" + refNameAgencia + ".Reprogramacao", newValue);
 
                         listaDescriptions.remove(pos);
                         adapter.notifyItemRemoved(pos);
-                    }
+                    //}
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -311,33 +361,32 @@ public class SolicitationExtensionActivity extends AppCompatActivity {
         new ItemTouchHelper(simpleCallback).attachToRecyclerView(recyclerView);
     }
 
-    public static void setAllowGetlistSolicitation() {
-        AllowGetlistSolicitation = true;
-        enableProgressBarVisible = false;
-        Log.d("FirebaseNotify", "key = true");
-    }
-
-    public static void refreshActivity() {
-        refresh = true;
-    }
+//    public static void setAllowGetlistSolicitation() {
+//        AllowGetlistSolicitation = true;
+//        enableProgressBarVisible = false;
+//    }
+//
+//    public static void refreshActivity() {
+//        refresh = true;
+//    }
 
     public void onBackPressed() {
-        LoginActivity.startActivity(SolicitationExtensionActivity.this);
+        ComandosActivity.startActivity(SolicitationExtensionActivity.this);
         GetVariables.getInstance().setSpTypeAccount("REGIONAL");
-        eraserSharedPreferences();
-        finish();
+        //eraserSharedPreferences();
+        //finish();
     }
 
-    public void eraserSharedPreferences() {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear().commit();
-    }
+//    public void eraserSharedPreferences() {
+//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        editor.clear().commit();
+//    }
 
     public void onResume() {
         super.onResume();
-        auth.requestToken("aprovaReprovaExtesao", "geral");
-        active = true;
+        //auth.requestToken("aprovaReprovaExtesao", "geral");
+        //active = true;
     }
 
     public void onPause() {
@@ -346,12 +395,12 @@ public class SolicitationExtensionActivity extends AppCompatActivity {
 
     public void onStop() {
         super.onStop();
-        solicitationThread.interrupt();
-        Thread.interrupted();
+        //solicitationThread.interrupt();
+        //Thread.interrupted();
     }
 
     public void onDestroy() {
-        active = false;
+        //active = false;
         super.onDestroy();
     }
 
@@ -360,10 +409,11 @@ public class SolicitationExtensionActivity extends AppCompatActivity {
         from.startActivity(intent);
     }
 
-    public static Activity getInstance() {
-        return finishSolicitationExtension;
-    }
-    public static boolean onActive() {
-        return active;
-    }
+
+//    public static Activity getInstance() {
+//        return finishSolicitationExtension;
+//    }
+//    public static boolean onActive() {
+//        return active;
+//    }
 }

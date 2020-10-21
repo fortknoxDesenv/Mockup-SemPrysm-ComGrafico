@@ -215,12 +215,12 @@ public class Authentication extends Application {
                     if (MessageTopic.getMessage() != null && MessageTopic.getTitle() != null && MessageTopic.getTitle() != null)
                         iniciarNotificacao(MessageTopic.getTopic(), MessageTopic.getTitle(), MessageTopic.getMessage());
 
-                    if (name.contains(".Reprogramacao") && SolicitationExtensionActivity.onActive()) {
+                    //if (name.contains(".Reprogramacao") && SolicitationExtensionActivity.onActive()) {
 
                         GetVariableStateSolicitHistory(SessionId);
-                    } else {
-                        closeSession(SessionId);
-                    }
+//                    } else {
+//                        closeSession(SessionId);
+//                    }
                 }
             }
 
@@ -376,7 +376,7 @@ public class Authentication extends Application {
                         editor.putString("solicitacao" + "_" + i, listaSolicitation.get(i));
                     editor.commit();
 
-                    SolicitationExtensionActivity.setAllowGetlistSolicitation();
+                    //SolicitationExtensionActivity.setAllowGetlistSolicitation();
                     Log.d("naoBate", "Bateu");
                     closeSession(SessionID);
 
@@ -440,9 +440,9 @@ public class Authentication extends Application {
 
                         editor.commit();
 
-                        if (listaSolicitHistAprovado.size() > 0) {
-                            SolicitationHistoryApproved.setAllowGetlistSolicitHist();
-                        }
+//                        if (listaSolicitHistAprovado.size() > 0) {
+//                            SolicitationHistoryApproved.setAllowGetlistSolicitHist();
+//                        }
                     }
 
                     //Lista de solicitações reprovadas pelo Gerente Regional;
@@ -459,9 +459,9 @@ public class Authentication extends Application {
                         }
                         editor.commit();
 
-                        if (listaSolicitHistReprovado.size() > 0) {
-                            SolicitationHistoryReproved.setAllowGetlistSolicitHist();
-                        }
+//                        if (listaSolicitHistReprovado.size() > 0) {
+//                            SolicitationHistoryReproved.setAllowGetlistSolicitHist();
+//                        }
                     }
 
                 } else {
@@ -510,7 +510,7 @@ public class Authentication extends Application {
                     editor.commit();
 
                     GetVariableStateSolicitHistory(SessionID);
-                    SolicitationExtensionActivity.setAllowGetlistSolicitation();
+                    //SolicitationExtensionActivity.setAllowGetlistSolicitation();
 
                 } else {
                     assert response.errorBody() != null;
@@ -617,8 +617,8 @@ public class Authentication extends Application {
                         editor.putString("solicitacao" + "_" + i, listaSolicitation.get(i));
                     editor.commit();
 
-                    SolicitationExtensionActivity.setAllowGetlistSolicitation();
-                    SolicitationExtensionActivity.refreshActivity();
+//                    SolicitationExtensionActivity.setAllowGetlistSolicitation();
+//                    SolicitationExtensionActivity.refreshActivity();
                     closeSession(SessionID);
 
                 } else {

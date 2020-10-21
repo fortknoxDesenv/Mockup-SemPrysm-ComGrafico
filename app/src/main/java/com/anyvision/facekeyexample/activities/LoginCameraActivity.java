@@ -12,6 +12,7 @@ import android.widget.Button;
 import androidx.fragment.app.FragmentManager;
 import com.anyvision.facekeyexample.R;
 import com.anyvision.facekeyexample.activities.logged.ChamadoActivity;
+import com.anyvision.facekeyexample.activities.logged.ComandosActivity;
 import com.anyvision.facekeyexample.activities.logged.MainActivity;
 import com.anyvision.facekeyexample.models.AppData;
 import com.anyvision.facekeyexample.models.GetVariables;
@@ -111,7 +112,7 @@ public class LoginCameraActivity extends BaseActivity implements FragmentCommuni
 
             @Override
             public void showLivenessResults() {//Liveness process completed. video is ready to use.
-                ChamadoActivity.startActivity(LoginCameraActivity.this);
+                ComandosActivity.startActivity(LoginCameraActivity.this);
                 finish();
             }
         });

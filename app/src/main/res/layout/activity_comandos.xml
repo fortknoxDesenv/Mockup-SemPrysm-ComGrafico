@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/chamado"
-    tools:context=".activities.logged.ChamadoActivity">
+    tools:context=".activities.logged.ComandosActivity">
 
     <ImageView
         android:id="@+id/sicredi"
@@ -22,116 +21,75 @@
         app:srcCompat="@drawable/logo_fk_2015" />
 
     <Button
-        android:id="@+id/btnCFTV"
+        android:id="@+id/btnTelaChamado"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintHeight_percent="0.13"
+        android:layout_marginBottom="3dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="35dp"
         android:layout_marginEnd="8dp"
         android:background="#65C734"
         android:textColor="#fff"
         android:textSize="22dp"
-        android:text="CFTV"
+        android:text="CHAMADO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sicredi"
-        app:layout_constraintBottom_toTopOf="@+id/btbAlarmeChamado"
+        app:layout_constraintBottom_toTopOf="@+id/btnGestaoGraficos"
         />
 
     <Button
-        android:id="@+id/btbAlarmeChamado"
+        android:id="@+id/btnGestaoGraficos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintHeight_percent="0.13"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
         android:layout_marginEnd="8dp"
         android:background="#65C734"
         android:textColor="#fff"
         android:textSize="22dp"
-        android:text="ALARME"
+        android:text="GESTÃO GRÁFICO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCFTV"
-        app:layout_constraintBottom_toTopOf="@id/btnSistemaIncendio"/>
-
-    <Button
-        android:id="@+id/btnSistemaIncendio"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.12"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="8dp"
-        android:background="#65C734"
-        android:textColor="#fff"
-        android:textSize="22dp"
-        android:text="SISTEMA INCÊNDIO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btbAlarmeChamado"
-        app:layout_constraintBottom_toTopOf="@id/btnHVAC"/>
-
-
-    <Button
-        android:id="@+id/btnHVAC"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.12"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="8dp"
-        android:background="#65C734"
-        android:textColor="#fff"
-        android:textSize="22dp"
-        android:text="HVAC"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSistemaIncendio"
-        app:layout_constraintBottom_toTopOf="@+id/btnArCondicionado"
-        />
-
-    <Button
-        android:id="@+id/btnArCondicionado"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.12"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="8dp"
-        android:background="#65C734"
-        android:textColor="#fff"
-        android:textSize="22dp"
-        android:text="AR CONDICIONADO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHVAC"
-        app:layout_constraintBottom_toTopOf="@+id/btnGestao"/>
-
-    <Button
-        android:id="@+id/btnGestao"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.12"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="8dp"
-        android:background="#65C734"
-        android:textColor="#fff"
-         android:visibility="invisible"
-        android:textSize="22dp"
-        android:text="TRAVA PORTA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnArCondicionado"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/btnTelaComandosMainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="8dp"
+        android:background="#65C734"
+        android:textColor="#fff"
+        android:textSize="22dp"
+        android:text="COMANDOS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGestaoGraficos"
+        app:layout_constraintBottom_toTopOf="@id/btnTelaSolicitationActivity"/>
+
+
+    <Button
+        android:id="@+id/btnTelaSolicitationActivity"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="8dp"
+        android:background="#65C734"
+        android:textColor="#fff"
+        android:textSize="22dp"
+        android:text="REGIONAL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTelaComandosMainActivity"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

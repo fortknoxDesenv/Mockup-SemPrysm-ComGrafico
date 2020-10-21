@@ -54,6 +54,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.anyvision.facekeyexample.activities.logged.ComandosActivity" />
         <activity android:name="com.anyvision.facekeyexample.activities.logged.ChamadoGraficoBarraActivity" />
         <activity android:name="com.anyvision.facekeyexample.activities.logged.ChamadoGraficoActivity" />
         <activity android:name="com.anyvision.facekeyexample.activities.logged.ChamadoGraficoGruposActivity" />
