@@ -347,7 +347,6 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-
     private void getPermissions() {
         boolean hasPermissions = true;
         for (String permission : PERMISSIONS) {
