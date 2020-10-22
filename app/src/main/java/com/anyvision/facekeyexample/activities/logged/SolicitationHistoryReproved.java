@@ -68,6 +68,7 @@ public class SolicitationHistoryReproved extends AppCompatActivity {
 
 //        SharedPreferences prefListHistorics = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 //        int size = prefListHistorics.getInt("solicitacaoReprovada_size", MODE_PRIVATE);
+
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String statusSolicitacao = preferences.getString("StatusSolicitacao", null);
 

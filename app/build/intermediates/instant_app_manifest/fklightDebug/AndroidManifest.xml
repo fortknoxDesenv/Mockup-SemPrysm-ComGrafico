@@ -3,7 +3,7 @@
     package="com.anyvision.facekeyexample.fklight"
     android:targetSandboxVersion="2"
     android:versionCode="7"
-    android:versionName="3" >
+    android:versionName="4" >
 
     <uses-sdk
         android:minSdkVersion="21"

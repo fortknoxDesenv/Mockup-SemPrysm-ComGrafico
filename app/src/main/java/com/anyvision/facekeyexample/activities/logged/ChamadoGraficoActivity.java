@@ -31,23 +31,21 @@ import java.util.List;
 
 public class ChamadoGraficoActivity extends AppCompatActivity {
 
-    private static Authentication auth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chamado_grafico);
 
-        auth = new Authentication(GetVariables.getInstance().getServerUrl());
+        //auth = new Authentication(GetVariables.getInstance().getServerUrl());
 
         //pega os valores do grafico
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        int sharedValorTotalPorcentagem = sharedPreferences.getInt("chamado_gestao_valor_total", MODE_PRIVATE);
-        int size = sharedPreferences.getInt("chamado_gestao_controle_sala_size", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(Enum.SharedPrivate.GRAFICO_CHAMADO.toString(), MODE_PRIVATE);
+        int sharedValorTotalPorcentagem = sharedPreferences.getInt(Enum.SharedPrivate.CHAMADO_GESTAO_VALOR_TOTAL.toString(), MODE_PRIVATE);
+        int size = sharedPreferences.getInt(Enum.SharedPrivate.CHAMADO_GESTAO_CONTROLE_SALA_SIZE.toString(), MODE_PRIVATE);
         final ArrayList<String> listaGestaoControle = new ArrayList<String>(size);
 
         for (int i = 0; i < size; i++) {
-            listaGestaoControle.add(sharedPreferences.getString("chamado_gestao_controle_sala" + "_" + i, null));
+            listaGestaoControle.add(sharedPreferences.getString(Enum.SharedPrivate.GRAFICO_CHAMADO.toString() + "_" + i, null));
         }
 
         final PieChart pieChart = findViewById(R.id.pie_chart);
@@ -64,11 +62,18 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
 
         List<PieEntry> value = new ArrayList<>();
 
-        //teste
+        if((listaGestaoControle.size() == 0) || (listaGestaoControle == null)){
+            listaGestaoControle.add(Enum.Chamado.CFTV.toString()+";"+(5));
+            listaGestaoControle.add(Enum.Chamado.ALARME.toString()+";"+(5));
+            listaGestaoControle.add(Enum.Chamado.SISTEMA_INCÊNDIO.toString().replace("_", " ")+";"+(5));
+            listaGestaoControle.add(Enum.Chamado.HVAC.toString()+";"+(5));
+            listaGestaoControle.add(Enum.Chamado.ARCONDICIONADO.toString()+";"+(5));
+            sharedValorTotalPorcentagem = 5;
+        }
+
         for (String li : listaGestaoControle) {
 
             String[] valorGestao = li.split(";");
-
             String nome = valorGestao[0].toUpperCase();
             double valor = Double.parseDouble(valorGestao[1]);
 
@@ -93,17 +98,14 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
 
         pieChart.setData(pieData);
         pieDataSet.setColors(ColorTemplate.PASTEL_COLORS); //roxo verde azul
-//        pieChart.animateXY(1400, 1400);
         pieChart.animateX(1400, Easing.EasingOption.EaseInOutCirc);
 
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
-
                 float teste2 = e.getY();
                 PieEntry pe = (PieEntry) e;
                 String label = pe.getLabel();
-
             }
 
             @Override
@@ -169,8 +171,7 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.LogarSemSesame.GRAFICO_GESTAO.toString());
-        ChamadoActivity.startActivity(ChamadoGraficoActivity.this);
+        ComandosActivity.startActivity(ChamadoGraficoActivity.this);
         //finish();
     }
 }

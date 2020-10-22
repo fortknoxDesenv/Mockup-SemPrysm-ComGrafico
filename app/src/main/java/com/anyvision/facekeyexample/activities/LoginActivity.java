@@ -266,9 +266,9 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 //teste
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.clear();
+//                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//                SharedPreferences.Editor editor = sharedPreferences.edit();
+
                 GetVariables.getInstance().setServerUrl(serverLocalUrl.getText().toString());
                 //auth.verifyServerStatus();
                 try {

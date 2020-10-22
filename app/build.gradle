@@ -6,12 +6,13 @@ android {
 
     defaultConfig {
         applicationId "com.anyvision.facekeyexample"
-        minSdkVersion 21
+        minSdkVersion 21 //versao android minima 5.0
         targetSdkVersion 28
         versionCode 7
-        versionName "3"
+        versionName "4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
 
     flavorDimensions"default"
     productFlavors {

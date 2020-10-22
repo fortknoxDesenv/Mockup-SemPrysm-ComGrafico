@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -111,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
                     SharedPreferences.Editor edit = sharedPreferences.edit();
                     edit.putString("StatusSolicitacao", Enum.StatusSolicitacao.AGUARDANDO.toString());
                     edit.apply();
+
+                    Toast.makeText(MainActivity.this, "Solicitação enviada com sucesso", Toast.LENGTH_SHORT).show();
 
                     //auth.requestToken(nameAgencia + ".2", "true");
                 } catch (Exception e) {
