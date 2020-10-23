@@ -56,17 +56,10 @@ public class SolicitationHistoryApproved extends AppCompatActivity {
         btnHistBackSolicit_Reproved.setVisibility(View.GONE);
         txtSolicitation = findViewById(R.id.txtSolicitation);
         txtSolicitation.setVisibility(View.GONE);
-//        AllowGetlistSolicitHist = true;
-//        finishSolicitationHistoryApproved = this;
-
-//        auth = new Authentication(GetVariables.getInstance().getServerUrl());
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerViewHistorySolicitation);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-
-//        SharedPreferences prefListHistorics = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-//        int size = prefListHistorics.getInt("solicitacaoAprovada_size", MODE_PRIVATE);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String statusSolicitacao = preferences.getString("StatusSolicitacao", null);
@@ -77,9 +70,6 @@ public class SolicitationHistoryApproved extends AppCompatActivity {
             listSolicitHistory.add("Solicitação");
             key = false;
         }
-//        for (int i = 0; i < size; i++) {
-//            listSolicitHistory.add(prefListHistorics.getString("solicitacaoAprovada" + "_" + i, null));
-//        }
 
         if ((listSolicitHistory == null) || listSolicitHistory.size() == 0) {
             progressBar.setVisibility(View.VISIBLE);
@@ -117,70 +107,6 @@ public class SolicitationHistoryApproved extends AppCompatActivity {
         };
         solicitationHistThread.start();
 
-//        solicitationHistThread = new Thread() {
-//            //        Thread t = new Thread() {
-//            @Override
-//            public void run() {
-//                try {
-//                    while (!isInterrupted()) {
-//                        Thread.sleep(2000);
-//
-//                        runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//
-//                                if (AllowGetlistSolicitHist) {
-//                                    AllowGetlistSolicitHist = false;
-//
-//                                    final SharedPreferences prefDescriptions = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-//                                    int size = prefDescriptions.getInt("solicitacaoAprovada_size", MODE_PRIVATE);
-//                                    final ArrayList<String> listaDescription = new ArrayList<String>(size);
-//                                    for (int i = 0; i < size; i++) {
-//                                        listaDescription.add(prefDescriptions.getString("solicitacaoAprovada" + "_" + i, null));
-//                                    }
-//
-//                                    if (listaDescription.size() > listSolicitHistory.size()) {
-//
-//                                        for (int i = 0; i < listaDescription.size(); i++) {
-//
-//                                            if (!listSolicitHistory.contains(listaDescription.get(i))) {
-//                                                listSolicitHistory.add(listaDescription.get(i));
-//                                                adapter.notifyItemInserted(listSolicitHistory.size());
-//                                                adapter.notifyDataSetChanged();
-//                                            }
-//                                        }
-//                                    }
-//
-//                                    //quando inicia essa tela e listaDescription esta vazio,ele entra aqui e remove tudo esta errado corrigir, o listSolicitHistory tinha 6
-//                                    if (listaDescription.size() < listSolicitHistory.size() && listaDescription.size() > 0) {
-//                                        try {
-//
-//                                            for (int i = 0; i < listSolicitHistory.size(); i++) {
-//
-//                                                if (!listaDescription.contains(listSolicitHistory.get(i))) {
-//                                                    listSolicitHistory.remove(listSolicitHistory.get(i));
-//                                                    //ele esta removendo zerado aqui
-//                                                    adapter.notifyItemRemoved(i);
-//                                                    adapter.notifyDataSetChanged();
-//                                                }
-//                                            }
-//                                        } catch (Exception e) {
-//                                            e.printStackTrace();
-//                                        }
-//                                    }
-//                                    progressBar.setVisibility(View.GONE);
-//                                }
-//                            }
-//                        });
-//                    }
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        };
-//
-//        solicitationHistThread.start();
-
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -191,22 +117,8 @@ public class SolicitationHistoryApproved extends AppCompatActivity {
         });
     }
 
-    //Habilita a Thread
-//    public static void setAllowGetlistSolicitHist() {
-//        AllowGetlistSolicitHist = true;
-//        Log.d("threadSolicitation", "key = true");
-//    }
-
-//    public void eraserSharedPreferences() {
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.clear().commit();
-//    }
-
     public void onResume() {
         super.onResume();
-//        auth.requestToken("aprovaReprovaExtesao", "solicitationExtension");
-//        active = true;
     }
 
     public void onPause() {
@@ -215,12 +127,9 @@ public class SolicitationHistoryApproved extends AppCompatActivity {
 
     public void onStop() {
         super.onStop();
-        //solicitationHistThread.interrupt();
     }
 
-    //teste
     public void onDestroy() {
-        //active = false;
         super.onDestroy();
     }
 
@@ -228,16 +137,4 @@ public class SolicitationHistoryApproved extends AppCompatActivity {
         Intent intent = new Intent(from, SolicitationHistoryApproved.class);
         from.startActivity(intent);
     }
-
-//    public static boolean onActive() {
-//        return active;
-//    }
-//
-//    public static void setOnActive(boolean setActive){
-//        active = setActive;
-//    }
-//
-//    public static Activity getInstance() {
-//        return finishSolicitationHistoryApproved;
-//    }
 }

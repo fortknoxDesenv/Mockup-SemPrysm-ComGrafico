@@ -23,7 +23,6 @@ public class ChamadoActivity extends AppCompatActivity {
     private Button btnIluminacao;
     private Button btnArCondicionado;
     private Button btnGestao;
-    private String typeAccount;
     private int qtdClicksCFTV;
     private int qtdClicksAlarme;
     private int qtdClicksIncendio;
@@ -105,18 +104,6 @@ public class ChamadoActivity extends AppCompatActivity {
                 }
             }
         });
-
-//        btnGestao.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                try {
-//                    qtdClicksHVAC ++;
-//                    Toast.makeText(ChamadoActivity.this, String.valueOf(qtdClicksHVAC), Toast.LENGTH_SHORT).show();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
     }
 
     public static void startActivity(Context from) {
@@ -126,7 +113,6 @@ public class ChamadoActivity extends AppCompatActivity {
 
     public void onBackPressed() {
         SalvarListaGrafico();
-        //auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.LogarSemSesame.GRAFICO_GESTAO.toString());
         ComandosActivity.startActivity(ChamadoActivity.this);
     }
 

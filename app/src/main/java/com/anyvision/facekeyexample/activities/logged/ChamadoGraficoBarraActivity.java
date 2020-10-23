@@ -2,27 +2,26 @@ package com.anyvision.facekeyexample.activities.logged;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.anyvision.facekeyexample.R;
-import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Random;
 
 public class ChamadoGraficoBarraActivity extends AppCompatActivity {
 
@@ -30,72 +29,67 @@ public class ChamadoGraficoBarraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chamado_grafico_barra);
+        try{
+            BarChart barChart = findViewById(R.id.pie_chart_barra);
 
-        //pega os valores do grafico
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        int size = sharedPreferences.getInt("chamado_grafico_grupos_size", MODE_PRIVATE);
-        final ArrayList<String> listaGestaoControle = new ArrayList<String>(size);
+            barChart.setDrawBarShadow(false);
+            barChart.setDrawValueAboveBar(true);
+            barChart.setMaxVisibleValueCount(50);
+            barChart.setDrawGridBackground(true);
 
-        for (int i = 0; i < size; i++) {
-            listaGestaoControle.add(sharedPreferences.getString("chamado_grafico_grupos" + "_" + i, null));
+            Description description = new Description();
+            description.setText("Sistema de Incêndio");
+            barChart.setDescription(description);
+
+            ArrayList<BarEntry> entries = new ArrayList<>();
+            Random rd = new Random();
+            entries.add(new BarEntry(0, (float) rd.nextInt(50 + 1 - 10) + 10));
+            entries.add(new BarEntry(1, (float) rd.nextInt(50 + 1 - 10) + 10));
+            entries.add(new BarEntry(2, (float) rd.nextInt(50 + 1 - 11) + 11));
+            entries.add(new BarEntry(3, (float) rd.nextInt(50 + 1 - 10) + 10));
+            entries.add(new BarEntry(4, (float) rd.nextInt(50 + 1 - 10) + 10));
+            entries.add(new BarEntry(5, (float) rd.nextInt(50 + 1 - 9) + 9));
+
+            BarDataSet barDataSet = new BarDataSet(entries, "depenses");
+            barDataSet.setColors(ColorTemplate.PASTEL_COLORS);
+            barDataSet.setValueTextColor(Color.WHITE);
+            barChart.setGridBackgroundColor(Color.parseColor("#252526"));
+
+            BarData data = new BarData(barDataSet);
+            data.setBarWidth(0.9f);
+
+            barChart.animateXY(2000,3000);
+            barChart.setData(data);
+
+            String[] months = new String[6];
+            String[] meses = new String[]{"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
+            int qtdMonthShowChart = -5;
+
+            for (int i = 0; i <= 5; i++) {
+
+                Calendar now = Calendar.getInstance();
+                now.add(Calendar.MONTH, qtdMonthShowChart);
+                int valor = now.get(Calendar.MONTH);
+
+                months[i] = meses[valor];
+                qtdMonthShowChart ++;
+            }
+
+            XAxis xAxis = barChart.getXAxis();
+            xAxis.setValueFormatter(new MyXAxisValueFormatter(months));
+            xAxis.setPosition(XAxis.XAxisPosition.BOTH_SIDED);
+
+            xAxis.setTextColor(Color.WHITE);
+
+            YAxis yAxisLeft = barChart.getAxisLeft();
+            yAxisLeft.setTextColor(Color.WHITE);
+
+            YAxis yAxisRight = barChart.getAxisRight();
+            yAxisRight.setTextColor(Color.WHITE);
         }
-
-        BarChart barChart = findViewById(R.id.pie_chart_barra);
-
-        barChart.setDrawBarShadow(false);
-        barChart.setDrawValueAboveBar(true);
-        barChart.setMaxVisibleValueCount(50);
-        barChart.setDrawGridBackground(true);
-
-        ArrayList<BarEntry> entries = new ArrayList<>();
-
-        entries.add(new BarEntry(1, 40f));
-        entries.add(new BarEntry(2, 44f));
-        entries.add(new BarEntry(3, 30f));
-        entries.add(new BarEntry(4, 36f));
-        entries.add(new BarEntry(5, 48f));
-
-
-        BarDataSet barDataSet = new BarDataSet(entries, "depenses");
-        barDataSet.setColors(ColorTemplate.PASTEL_COLORS);
-        barDataSet.setValueTextColor(Color.WHITE);
-        barChart.setGridBackgroundColor(Color.parseColor("#252526"));
-
-
-
-        BarData data = new BarData(barDataSet);
-        data.setBarWidth(0.9f);
-
-        barChart.animateXY(2000,3000);
-        barChart.setData(data);
-
-//        ArrayList<IBarDataSet> dataSets = new ArrayList<>();
-//        dataSets.add((IBarDataSet) depenses);
-//        BarData Data = new BarData(dataSets);
-//        barChart.setData(Data);
-
-
-
-        String[] months = new String[]{"Jan", "Fev", "Marc", "April", "May", "Jun"};
-        XAxis xAxis = barChart.getXAxis();
-        xAxis.setValueFormatter(new MyXAxisValueFormatter(months));
-        xAxis.setPosition(XAxis.XAxisPosition.BOTH_SIDED);
-
-//        xAxis.setAxisLineColor(Color.BLUE);
-        xAxis.setTextColor(Color.WHITE);
-//        xAxis.setGridColor(Color.YELLOW);
-
-        YAxis yAxisLeft = barChart.getAxisLeft();
-//        yAxisLeft.setAxisLineColor(Color.BLUE);
-        yAxisLeft.setTextColor(Color.WHITE);
-
-        YAxis yAxisRight = barChart.getAxisRight();
-        yAxisRight.setTextColor(Color.WHITE);
-
-
-
-
-
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public class MyXAxisValueFormatter implements IAxisValueFormatter {
@@ -110,17 +104,14 @@ public class ChamadoGraficoBarraActivity extends AppCompatActivity {
         }
     }
 
-
     public static void startActivity(Context from) {
         Intent intent = new Intent(from, ChamadoGraficoBarraActivity.class);
         from.startActivity(intent);
     }
 
     public void onBackPressed() {
-        ChamadoGraficoGruposActivity.startActivity(ChamadoGraficoBarraActivity.this);
-        //finish();
+        ChamadoGraficoActivity.startActivity(ChamadoGraficoBarraActivity.this);
     }
-
 }
 
 

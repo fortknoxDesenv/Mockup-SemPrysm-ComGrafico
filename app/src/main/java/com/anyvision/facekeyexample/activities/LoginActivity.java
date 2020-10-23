@@ -2,7 +2,6 @@ package com.anyvision.facekeyexample.activities;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -15,7 +14,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
@@ -31,30 +29,18 @@ import androidx.core.app.ActivityCompat;
 
 import com.anyvision.facekeyexample.R;
 import com.anyvision.facekeyexample.activities.logged.MainActivity;
-import com.anyvision.facekeyexample.activities.logged.SolicitationExtensionActivity;
 import com.anyvision.facekeyexample.firebase.Firebase;
 import com.anyvision.facekeyexample.models.GetVariables;
 import com.anyvision.facekeyexample.models.InfoMobile;
 import com.anyvision.facekeyexample.prysm.Authentication;
 import com.anyvision.facekeyexample.utils.Enum;
-import com.anyvision.ocr.network.HttpClient;
 import com.anyvision.sesame.Sesame;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URI;
-import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class LoginActivity extends BaseActivity {
 
@@ -99,6 +85,7 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         infoMobile = new InfoMobile();
         SettingsComponent = findViewById(R.id.settings);
         logInBtn = findViewById(R.id.login);
@@ -149,10 +136,9 @@ public class LoginActivity extends BaseActivity {
                 String novaSenha = txtNovaSenha.getText().toString();
                 String repitaNovaSenha = txtRepitaNovaSenha.getText().toString();
 
-                if(novaSenha.equals(repitaNovaSenha)){
-                  auth.GetLogarSemSesame(usuario, novaSenha, Enum.LogarSemSesame.MUDARSENHA.toString());
-                }
-                else{
+                if (novaSenha.equals(repitaNovaSenha)) {
+                    auth.GetLogarSemSesame(usuario, novaSenha, Enum.LogarSemSesame.MUDARSENHA.toString());
+                } else {
                     Toast.makeText(LoginActivity.this, "Senhas não conferem", Toast.LENGTH_LONG).show();
                     txtNovaSenha.getText().clear();
                     txtRepitaNovaSenha.getText().clear();
@@ -167,7 +153,7 @@ public class LoginActivity extends BaseActivity {
             }
         });
 
-          alertDialogNovaSenha = alertDialogBuildNovaSenha.create();
+        alertDialogNovaSenha = alertDialogBuildNovaSenha.create();
 
         SharedPreferences sharedEnableBtn = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         if (sharedEnableBtn.getBoolean(getString(R.string.enableBtnRegister), false)) {
@@ -246,7 +232,6 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    //auth.requestToken(getString(R.string.AGENCIA0001_5), String.valueOf(true));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -265,32 +250,15 @@ public class LoginActivity extends BaseActivity {
         logInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //teste
-//                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-//                SharedPreferences.Editor editor = sharedPreferences.edit();
-
                 GetVariables.getInstance().setServerUrl(serverLocalUrl.getText().toString());
-                //auth.verifyServerStatus();
                 try {
-//                    if (auth.getStatusServer()) {
                     if (true) {
                         if (etUsername.getText().toString().matches(""))
                             Toast.makeText(LoginActivity.this, getString(R.string.digite_nome_usuario), Toast.LENGTH_LONG).show();
 
                         else {
-                            //GetVariables.getInstance().setSenhaUsuarioLogin(editSenhaLogin.getText().toString());
                             GetVariables.getInstance().setEtUsername(etUsername.getText().toString());
                             progressBar.setVisibility(View.VISIBLE);
-                            //Sesame.initialize(anyvisionUrl.getText().toString(), 60000);
-                            String typeAccount = GetVariables.getInstance().getSpTypeAccount();
-
-//                            if (typeAccount.equals(Enum.AgReg.REGIONAL.toString()))
-//                                auth.requestToken(getString(R.string.aprovaReprovaExtesao), getString(R.string.geral));
-//
-//                            if (typeAccount.equals(Enum.AgReg.AGENCIA.toString())) {
-//                                auth.requestToken(Enum.request.aprovaReprovaExtesao.toString(), Enum.request.descriptions.toString());
-//                            }
-
                             LoginCameraActivity.startActivity(LoginActivity.this);
                         }
                     } else {
@@ -508,7 +476,7 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    public static  void AlterarSenhaLogin(){
+    public static void AlterarSenhaLogin() {
         progressBar.setVisibility(View.GONE);
         alertDialogNovaSenha.show();
     }

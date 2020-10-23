@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.anyvision.facekeyexample.fklight"
+    package="com.anyvision.facekeyexample.fkmockup"
     android:versionCode="7"
     android:versionName="4" >
 
@@ -50,13 +50,20 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.anyvision.facekeyexample.activities.logged.ComandosActivity" />
-        <activity android:name="com.anyvision.facekeyexample.activities.logged.ChamadoGraficoBarraActivity" />
-        <activity android:name="com.anyvision.facekeyexample.activities.logged.ChamadoGraficoActivity" />
-        <activity android:name="com.anyvision.facekeyexample.activities.logged.ChamadoGraficoGruposActivity" />
+        <activity
+            android:name="com.anyvision.facekeyexample.activities.logged.ComandosActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.anyvision.facekeyexample.activities.logged.ChamadoGraficoBarraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.anyvision.facekeyexample.activities.logged.ChamadoGraficoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.anyvision.facekeyexample.activities.logged.ChamadoGraficoGruposActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.anyvision.facekeyexample.activities.logged.SolicitationHistoryApproved"
             android:screenOrientation="portrait" />
@@ -202,7 +209,7 @@
 
         <provider
             android:name="androidx.work.impl.WorkManagerInitializer"
-            android:authorities="com.anyvision.facekeyexample.fklight.workmanager-init"
+            android:authorities="com.anyvision.facekeyexample.fkmockup.workmanager-init"
             android:directBootAware="false"
             android:exported="false"
             android:multiprocess="true" />
@@ -324,7 +331,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.anyvision.facekeyexample.fklight.firebaseinitprovider"
+            android:authorities="com.anyvision.facekeyexample.fkmockup.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
 
@@ -338,7 +345,7 @@
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
-            android:authorities="com.anyvision.facekeyexample.fklight.com.squareup.picasso"
+            android:authorities="com.anyvision.facekeyexample.fkmockup.com.squareup.picasso"
             android:exported="false" />
 
         <service
@@ -360,7 +367,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.anyvision.facekeyexample.fklight.fileProvider"
+            android:authorities="com.anyvision.facekeyexample.fkmockup.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data

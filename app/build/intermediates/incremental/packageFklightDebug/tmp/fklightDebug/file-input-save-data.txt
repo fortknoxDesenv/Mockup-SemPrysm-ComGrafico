@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Oct 22 11:45:33 BRT 2020
+#Fri Oct 23 10:42:39 BRT 2020
 4.path=Regula/resource.dat
 8.set=DEX
 6.path=lib/x86/libAndroidSdk.so

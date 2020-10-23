@@ -5,12 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.MotionEvent;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.anyvision.facekeyexample.R;
-import com.anyvision.facekeyexample.models.GetVariables;
-import com.anyvision.facekeyexample.prysm.Authentication;
 import com.anyvision.facekeyexample.utils.Enum;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -35,8 +34,6 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chamado_grafico);
-
-        //auth = new Authentication(GetVariables.getInstance().getServerUrl());
 
         //pega os valores do grafico
         SharedPreferences sharedPreferences = getSharedPreferences(Enum.SharedPrivate.GRAFICO_CHAMADO.toString(), MODE_PRIVATE);
@@ -103,9 +100,9 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
-                float teste2 = e.getY();
-                PieEntry pe = (PieEntry) e;
-                String label = pe.getLabel();
+//                float teste2 = e.getY();
+//                PieEntry pe = (PieEntry) e;
+//                String label = pe.getLabel();
             }
 
             @Override
@@ -142,7 +139,7 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
             @Override
             public void onChartSingleTapped(MotionEvent me)
             {
-             ChamadoGraficoGruposActivity.startActivity(ChamadoGraficoActivity.this);
+             ChamadoGraficoBarraActivity.startActivity(ChamadoGraficoActivity.this);
             }
 
             @Override
@@ -172,6 +169,5 @@ public class ChamadoGraficoActivity extends AppCompatActivity {
 
     public void onBackPressed() {
         ComandosActivity.startActivity(ChamadoGraficoActivity.this);
-        //finish();
     }
 }

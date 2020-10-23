@@ -13,13 +13,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-
     flavorDimensions"default"
     productFlavors {
         fklight{
             dimension"default"
-            applicationIdSuffix ".fklight"
-            resValue "string", "app_name", "FK Light"
+            applicationIdSuffix ".fkmockup"
+            resValue "string", "app_name", "FK Mockup"
         }
     }
 
@@ -34,13 +33,9 @@ android {
         variant.outputs.all { output ->
             def project = "fk"
             def SEP = "_"
-/*            if(variant.productFlavors[0].name) {
-                def flavor = variant.productFlavors[0].name
-                fk_app_001_ra
-            }*/
             def buildType = variant.variantData.variantConfiguration.buildType.name
             def version = variant.versionName
-            def versionForm = "ra"
+            def versionForm = "Mockup"
             def date = new Date()
             def formattedDate = date.format('ddMMyy_HHmm')
 
@@ -100,7 +95,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-vision-image-label:18.0.4'
     implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
-
-
 }
 apply plugin: 'com.google.gms.google-services'

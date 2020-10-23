@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-137:12
-INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-137:12
-INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-137:12
-INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-137:12
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-145:12
+INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-145:12
+INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-145:12
+INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-145:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\6b574d83ec66139e81b49a86fbcbe4ed\AndroidManifest.xml:17:1-24:12
 MERGED from [uk.co.chrisjenx:calligraphy:2.3.0] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\9f18fd9626fce94e501ece255462ff66\AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\dfa17af06254ea2f63fbed428f16b3c3\AndroidManifest.xml:17:1-22:12
@@ -96,22 +96,22 @@ MERGED from [:core-5.1.2298:] C:\Users\ewerton.richieri\.gradle\caches\transform
 MERGED from [:lottie-3.0.0:] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\7a89e294747e764b752dd516a942fc2e\AndroidManifest.xml:2:1-11:12
 MERGED from [:ocr-4.0.0:] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\0af8dc476f27734846b7ea9e49f67983\AndroidManifest.xml:2:1-15:12
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\9b77258a728ecc16dba78fb97301f68b\AndroidManifest.xml:15:1-22:12
-INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-137:12
-INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-137:12
-INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-137:12
+INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-145:12
+INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-145:12
+INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-145:12
 	package
 		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:4:5-43
 		INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-137:12
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-145:12
 		INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-137:12
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:1-145:12
 		INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:2:11-69
@@ -266,7 +266,7 @@ MERGED from [:cameraview-2.4.0:] C:\Users\ewerton.richieri\.gradle\caches\transf
 	android:name
 		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:27:9-53
 application
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:30:5-135:19
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:30:5-143:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\6b574d83ec66139e81b49a86fbcbe4ed\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\6b574d83ec66139e81b49a86fbcbe4ed\AndroidManifest.xml:22:5-20
 MERGED from [uk.co.chrisjenx:calligraphy:2.3.0] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\9f18fd9626fce94e501ece255462ff66\AndroidManifest.xml:11:5-20
@@ -386,185 +386,193 @@ MERGED from [:ocr-4.0.0:] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\
 	android:name
 		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:31:9-43
 activity#com.anyvision.facekeyexample.activities.logged.ComandosActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:39:9-81
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:39:9-40:52
+	android:screenOrientation
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:40:13-49
 	android:name
 		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:39:19-69
 activity#com.anyvision.facekeyexample.activities.logged.ChamadoGraficoBarraActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:40:9-83
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:42:9-43:52
+	android:screenOrientation
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:43:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:40:19-80
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:42:19-80
 activity#com.anyvision.facekeyexample.activities.logged.ChamadoGraficoActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:41:9-78
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:45:9-46:52
+	android:screenOrientation
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:46:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:41:19-75
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:45:19-75
 activity#com.anyvision.facekeyexample.activities.logged.ChamadoGraficoGruposActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:42:9-84
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:48:9-49:52
+	android:screenOrientation
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:49:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:42:19-81
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:48:19-81
 activity#com.anyvision.facekeyexample.activities.logged.SolicitationHistoryApproved
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:43:9-45:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:51:9-53:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:45:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:53:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:44:13-74
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:52:13-74
 activity#com.anyvision.facekeyexample.activities.logged.SolicitationHistoryReproved
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:46:9-48:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:54:9-56:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:48:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:56:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:47:13-74
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:55:13-74
 activity#com.anyvision.facekeyexample.activities.logged.SolicitationExtensionActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:49:9-51:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:57:9-59:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:51:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:59:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:50:13-76
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:58:13-76
 activity#com.anyvision.facekeyexample.activities.RegisterActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:52:9-54:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:60:9-62:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:54:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:62:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:53:13-56
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:61:13-56
 activity#com.anyvision.facekeyexample.activities.logged.TimeActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:55:9-68
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:63:9-68
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:55:19-65
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:63:19-65
 activity#com.anyvision.facekeyexample.activities.logged.MainActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:56:9-58:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:64:9-66:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:58:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:66:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:57:13-59
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:65:13-59
 activity#com.anyvision.facekeyexample.activities.logged.ChamadoActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:59:9-61:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:67:9-69:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:61:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:69:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:60:13-62
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:68:13-62
 activity#com.anyvision.facekeyexample.activities.CameraActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:62:9-64:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:70:9-72:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:64:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:72:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:63:13-54
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:71:13-54
 activity#com.anyvision.facekeyexample.activities.LoginActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:65:9-73:20
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:73:9-81:20
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:67:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:75:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:66:13-53
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:74:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:68:13-72:29
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:76:13-80:29
 action#android.intent.action.MAIN
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:69:17-69
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:77:17-69
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:69:25-66
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:77:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:71:17-77
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:79:17-77
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:71:27-74
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:79:27-74
 activity#com.anyvision.facekeyexample.activities.SettingsActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:74:9-76:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:82:9-84:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:76:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:84:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:75:13-56
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:83:13-56
 receiver#com.anyvision.facekeyexample.GcmBroadcastReceiver
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:78:9-88:20
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:86:9-96:20
 	android:permission
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:80:13-73
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:88:13-73
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:79:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:87:13-49
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:com.google.android.gcm.demo.app
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:81:13-87:29
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:89:13-95:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:84:17-81
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:92:17-81
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:84:25-78
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:92:25-78
 category#com.google.android.gcm.demo.app
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:86:17-76
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:94:17-76
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:86:27-73
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:94:27-73
 service#com.anyvision.facekeyexample.GcmIntentService
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:90:9-53
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:98:9-53
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:90:18-50
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:98:18-50
 activity#com.anyvision.facekeyexample.activities.ResultActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:92:9-94:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:100:9-102:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:94:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:102:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:93:13-54
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:101:13-54
 activity#com.anyvision.facekeyexample.activities.InstructionsActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:95:9-97:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:103:9-105:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:97:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:105:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:96:13-60
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:104:13-60
 activity#com.anyvision.facekeyexample.activities.PhotoActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:98:9-100:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:106:9-108:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:100:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:108:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:99:13-53
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:107:13-53
 activity#com.anyvision.facekeyexample.activities.LoginResultActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:101:9-103:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:109:9-111:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:103:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:111:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:102:13-59
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:110:13-59
 activity#com.anyvision.facekeyexample.activities.LoginCameraActivity
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:104:9-106:52
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:112:9-114:52
 	android:screenOrientation
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:106:13-49
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:114:13-49
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:105:13-59
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:113:13-59
 service#com.anyvision.facekeyexample.firebase.Notification
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:107:9-114:19
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:115:9-122:19
 	android:enabled
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:109:13-35
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:117:13-35
 	android:exported
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:110:13-36
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:118:13-36
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:108:13-50
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:116:13-50
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:111:13-113:29
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:119:13-121:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:112:17-78
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:120:17-78
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:112:25-75
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:120:25-75
 meta-data#com.google.firebase.messaging.default_notification_channel_id
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:115:9-117:71
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:123:9-125:71
 	android:value
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:117:13-68
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:125:13-68
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:116:13-89
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:124:13-89
 meta-data#com.google.firebase.messaging.default_notification_icon
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:118:9-120:57
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:126:9-128:57
 	android:resource
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:120:13-54
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:128:13-54
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:119:13-83
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:127:13-83
 meta-data#com.google.firebase.messaging.default_notification_color
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:126:9-128:53
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:134:9-136:53
 	android:resource
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:128:13-50
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:136:13-50
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:127:13-84
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:135:13-84
 meta-data#com.google.firebase.ml.vision.DEPENDENCIES
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:129:9-131:36
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:137:9-139:36
 MERGED from [:sesame-4.0.2:] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\9baed5a02ee1a3e24cbdc2ac75311d37\AndroidManifest.xml:14:9-16:36
 MERGED from [:sesame-4.0.2:] C:\Users\ewerton.richieri\.gradle\caches\transforms-2\files-2.1\9baed5a02ee1a3e24cbdc2ac75311d37\AndroidManifest.xml:14:9-16:36
 	android:value
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:131:13-33
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:139:13-33
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:130:13-70
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:138:13-70
 uses-library#org.apache.http.legacy
-ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:132:9-134:40
+ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:140:9-142:40
 	android:required
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:134:13-37
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:142:13-37
 	android:name
-		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:133:13-50
+		ADDED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml:141:13-50
 uses-sdk
 INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Projeto-Android\PROJETOS\Mockup-SemPrysm-ComGrafico\app\src\main\AndroidManifest.xml
